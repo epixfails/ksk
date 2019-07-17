@@ -1,0 +1,89 @@
+.page-header {
+  padding: 15px 15px;
+  // background-color: rgb(137, 214, 214); //эту строку выпилить
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    // border-top: 1px solid $main-color;
+  }
+
+  &__style-container {
+    position: relative;
+  }
+
+  &__style-container:before,
+  &__style-container:after {
+    
+    @media (min-width: $screen-lg) {
+      content: '';
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      height: 1px;
+      background-color: $main-color;
+      z-index: -1;
+    }
+  }
+
+  &__style-container:before {
+    width: 90%;
+    left: 30px;
+  }
+
+  &__style-container:after {
+    width: 87%;
+    left: 125px;
+    bottom: 0;
+  }
+
+  &__offers-link {
+    display: none;
+
+    @media (min-width: $screen-lg) {
+      display: flex;
+      position: relative;
+      align-self: stretch;
+      background-color: $second-color;
+      text-decoration: none;
+      color: $text-color-white;
+      margin: 0 20px;
+      // z-index: 1;
+    }
+  }
+
+  &__offers-link:before,
+  &__offers-link:after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    width: 20px;
+    height: 100%;
+  }
+
+  &__offers-link:before {
+    background: linear-gradient(to bottom right, transparent 49%, $second-color 51%);
+    left: -20px;
+  }
+
+  &__offers-link:after {
+    background: linear-gradient(to top left, transparent 49%, $second-color 51%);
+    right: -20px;
+  }
+
+  &__offers-link span {
+    align-self: center;
+    padding: 0 10px;
+  }
+
+  &__phone {
+    text-decoration: none;
+    color: $main-color;
+    font-weight: bold;
+
+    @media (min-width: $screen-lg) {
+      padding: 0 20px;
+    }
+  }
+}
