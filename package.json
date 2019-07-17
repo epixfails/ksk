@@ -3,14 +3,7 @@
   "version": "1.0.0",
   "description": "Start project.",
   "scripts": {
-    "start": "gulp",
-    "test": "stylelint \"src/scss/**/*.scss\" --syntax=scss",
-    "lint-staged": "lint-staged",
-    "precommit": "lint-staged"
-  },
-  "lint-staged": {
-    "*.css": "stylelint",
-    "*.scss": "stylelint --syntax=scss"
+    "start": "gulp"
   },
   "author": "Ivlev Michael",
   "license": "MIT",
