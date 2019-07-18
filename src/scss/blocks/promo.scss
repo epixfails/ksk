@@ -1,14 +1,46 @@
 .promo {
 
-  &__inner {}
+  &__inner {
+    padding: 15px;
+  }
 
-  &__slider {}
+  &__slider {
+    position: relative;
+  }
 
-  &__slide-item {}
+  &__slider .slick-list {
 
-  &__slide-link {}
+    @media (min-width: $screen-lg) {
+      width: 90%;
+      margin: 0 auto;
+      cursor: pointer;
+    }
+  }
 
-  &__slide-img {
-    
+  &__slider .slick-arrow {
+    display: none;
+    position: absolute;
+    font-size: 0;
+    border: none;
+    background-color: transparent;
+
+    @media (min-width: $screen-lg) {
+      display: block;
+      width: 45px;
+      height: 100%;
+      background-image: url(../img/promo/noun_Next_1833638.png);
+      background-repeat: no-repeat;
+    }
+  }
+
+  &__slider .slick-prev {
+    transform: rotate(180deg);
+    background-position: 0 58%;
+  }
+
+  &__slider .slick-next {
+    right: 0;
+    top: 0;
+    background-position: 0 46%;
   }
 }
