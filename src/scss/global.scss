@@ -30,14 +30,14 @@
   font-style: normal;
 }
 
-// @font-face {
-//   font-family: 'Montserrat';
-//   src:
-//     url('../fonts/subset-Montserrat-Medium.woff2') format('woff2'),
-//     url('../fonts/subset-Montserrat-Medium.woff') format('woff');
-//   font-weight: 500;
-//   font-style: normal;
-// }
+.visually-hidden {
+  position: absolute;
+  font-size: 0;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+}
 
 
 html {

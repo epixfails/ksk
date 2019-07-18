@@ -72,6 +72,7 @@
     @media (min-width: $screen-lg) {
       display: flex;
       justify-content: space-around;
+      align-items: baseline;
       margin: 0;
       padding: 0;
     }
@@ -94,7 +95,10 @@
   }
 
   &__sub-link:hover {
-    color: $main-color;
+
+    @media (min-width: $screen-lg) {
+      color: $main-color;
+    }
   }
 
   &__item {
@@ -107,6 +111,7 @@
     text-decoration: none;
      
     @media (min-width: $screen-lg) {
+      font-size: 16px;
       color: $text-color;
     }
   }
@@ -166,6 +171,7 @@
     width: 30px;
     height: 30px;
     border: none;
+    outline: none;
     background-color: transparent;
     padding: 0;
      

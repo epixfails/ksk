@@ -1,7 +1,10 @@
 .promo {
 
   &__inner {
-    padding: 15px;
+
+    @media (min-width: $screen-lg) {
+      padding: 15px;
+    }
   }
 
   &__slider {
@@ -13,6 +16,7 @@
     @media (min-width: $screen-lg) {
       width: 90%;
       margin: 0 auto;
+      box-shadow: 0px 0px 10px rgb(204, 204, 204);
       cursor: pointer;
     }
   }
@@ -22,7 +26,9 @@
     position: absolute;
     font-size: 0;
     border: none;
+    outline: none;
     background-color: transparent;
+    cursor: pointer;
 
     @media (min-width: $screen-lg) {
       display: block;
