@@ -19,7 +19,7 @@ $( document ).ready(function() {
     }
   });
 
-  // СЛАЙДЕР
+  // ПРОМО СЛАЙДЕР
   $('.promo__slider').slick({
     infinite: true,
     autoplay: true,
@@ -27,5 +27,29 @@ $( document ).ready(function() {
     slidesToShow: 1,
     slidesToScroll: 1
   });
- 
+
+  // СЛАЙДЕР ОБЪЕКТОВ
+  $('.objects__slider').slick({
+    infinite: true,
+    slidesToShow: 4,
+    slidesToScroll: Infinity,
+    responsive: [
+      {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 3,
+        }
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          centerMode: true,
+          slidesToShow: 1,
+          swipe: true,
+          swipeToSlide: true,
+          centerPadding: '60px',
+        }
+      }
+    ]
+  });
 });

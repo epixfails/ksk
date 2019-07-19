@@ -1,0 +1,40 @@
+.objects {
+
+	&__title-wrap {
+		padding: 15px;
+	}
+
+	&__title {
+		font-size: 30px;
+		font-weight: 500;
+		margin-top: 20px;
+
+		@media (min-width: $screen-lg) {
+			padding: 0 55px;
+		}
+	}
+
+	&__slider .slick-arrow {
+		display: none;
+		position: absolute;
+		font-size: 0;
+		border: none;
+		outline: none;
+		background-color: transparent;
+		cursor: pointer;
+	}
+
+	&__slide-item {
+		padding: 8px;
+		transform: scale(0.8);
+		transition: all 0.4s ease;
+
+		@media (min-width: $screen-sm) {
+			transform: scale(1);
+		}
+	}
+
+	&__slide-item.slick-active {
+		transform: scale(1);
+	}
+}
