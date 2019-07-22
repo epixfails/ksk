@@ -1,0 +1,10 @@
+.offer-link {
+  display: inline-flex;
+  justify-content: space-around;
+  align-self: flex-start;
+  text-decoration: none;
+  min-width: 250px;
+  padding: 13px;
+  color: $text-color-white;
+  background-color: $second-color;
+}

@@ -6,6 +6,7 @@ $( document ).ready(function() {
     e.preventDefault;
     $('.main-nav__burger').toggleClass('main-nav__burger--active');
     $('.main-nav__menu').toggleClass('main-nav__menu--active');
+    $('.page-header__offers-button').toggleClass('page-header__offers-button--active');
   });
 
   // ВЫПАДАЮЩЕЕ МЕНЮ
@@ -37,7 +38,10 @@ $( document ).ready(function() {
       {
         breakpoint: 1200,
         settings: {
+          centerMode: false,
+          infinite: true,
           slidesToShow: 3,
+          slidesToScroll: 3
         }
       },
       {
