@@ -37,7 +37,10 @@
     }
 
     &--first-order {
-      order: -1;
+
+      @media (min-width: $screen-lg) {
+        order: -1;
+      }
     }
   }
 

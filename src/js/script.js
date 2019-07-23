@@ -19,6 +19,16 @@ $( document ).ready(function() {
       $('.main-nav__link').not(this).removeClass('main-nav__link--active').next().slideUp();
     }
   });
+  
+  $('.page-footer__nav-link').click(function(){
+    var width = $(window).width();
+
+    $(this).toggleClass('page-footer__nav-link--active').next().slideToggle();
+    
+    if (width >= 1200) {
+      $('.page-footer__nav-link').not(this).removeClass('page-footer__nav-link--active').next().slideUp();
+    }
+  });
 
   // ПРОМО СЛАЙДЕР
   $('.promo__slider').slick({
