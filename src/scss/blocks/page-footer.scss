@@ -1,0 +1,19 @@
+.page-footer {
+    background-color: #dddddd;
+
+    &__contacts {
+        // display: flex;
+        // flex-direction: column;
+        // justify-content: space-around;
+        border-bottom: 1px solid #d9d9d9;
+        text-align: center;
+    }
+
+    &__tel {
+        text-decoration: none;
+    }
+
+    &__tel span {
+        display: block;
+    }
+}
