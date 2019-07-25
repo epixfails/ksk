@@ -38,7 +38,7 @@
 
   &__footer {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     font-size: 22px;
     color: $main-color;
@@ -47,13 +47,16 @@
   }
 
   &__footer span {
-    display: inline-block;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
   }
 
   &__arrow {
     font-size: 0;
     width: 28px;
     height: 28px;
+    margin-left: 10px;
     background-image: url(../img/card-mini/arrow-next.png);
     background-repeat: no-repeat;
     background-size: cover;

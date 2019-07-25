@@ -1,0 +1,51 @@
+.breadcrumbs {
+  display: none;
+
+  @media (min-width: $screen-sm) {
+    display: block;
+    padding: 10px 60px;
+  }
+
+  @media (min-width: $screen-lg) {
+    padding: 10px 85px;
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+  }
+
+  &__item:not(:last-child):after {
+    content: '';
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    margin: 0 3px;
+    border-right: 1px solid $main-color;
+    border-top: 1px solid $main-color;
+    transform: rotate(45deg);
+    vertical-align: middle;
+  }
+
+  &__item {
+    display: inline-block;
+    font-size: 14px;
+    vertical-align: middle;
+  }
+
+  &__link-main {
+    display: inline-block;
+    font-size: 0;
+    width: 37px;
+    height: 18px;
+    background-image: url(../img/breadcrumbs/breadcrumbs-main-icon.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    vertical-align: middle;
+  }
+
+  &__link {
+    font-size: 14px;
+    text-decoration: none;
+  }
+}

@@ -36,22 +36,20 @@ $( document ).ready(function() {
     autoplay: true,
     autoplaySpeed: 5000,
     slidesToShow: 1,
-    slidesToScroll: 1
+    adaptiveHeight: true
   });
 
   // СЛАЙДЕР ОБЪЕКТОВ
   $('.objects__slider').slick({
     infinite: true,
     slidesToShow: 4,
-    slidesToScroll: Infinity,
     responsive: [
       {
         breakpoint: 1200,
         settings: {
           centerMode: false,
           infinite: true,
-          slidesToShow: 3,
-          slidesToScroll: 3
+          slidesToShow: 3
         }
       },
       {
