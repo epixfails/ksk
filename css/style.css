@@ -747,9 +747,8 @@ pre {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -759,12 +758,20 @@ pre {
   border-top: 1px solid rgba(0, 0, 0, 0.07); }
 
 .product-card__footer span {
-  display: inline-block; }
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
 
 .product-card__arrow {
   font-size: 0;
   width: 28px;
   height: 28px;
+  margin-left: 10px;
   background-image: url(../img/card-mini/arrow-next.png);
   background-repeat: no-repeat;
   background-size: cover; }
@@ -1143,5 +1150,45 @@ pre {
     display: block;
     font-family: 'Roboto';
     font-size: 15px; }
+
+.breadcrumbs {
+  display: none; }
+  @media (min-width: 768px) {
+    .breadcrumbs {
+      display: block;
+      padding: 10px 60px; } }
+  @media (min-width: 1200px) {
+    .breadcrumbs {
+      padding: 10px 85px; } }
+  .breadcrumbs__list {
+    list-style: none;
+    padding: 0; }
+  .breadcrumbs__item:not(:last-child):after {
+    content: '';
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    margin: 0 3px;
+    border-right: 1px solid #ee7231;
+    border-top: 1px solid #ee7231;
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+    vertical-align: middle; }
+  .breadcrumbs__item {
+    display: inline-block;
+    font-size: 14px;
+    vertical-align: middle; }
+  .breadcrumbs__link-main {
+    display: inline-block;
+    font-size: 0;
+    width: 37px;
+    height: 18px;
+    background-image: url(../img/breadcrumbs/breadcrumbs-main-icon.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    vertical-align: middle; }
+  .breadcrumbs__link {
+    font-size: 14px;
+    text-decoration: none; }
 
 /*# sourceMappingURL=style.css.map */
