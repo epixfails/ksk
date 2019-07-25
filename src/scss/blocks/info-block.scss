@@ -1,0 +1,27 @@
+.info-block {
+  padding: 0 25px;
+
+  &__title h2{
+    text-align: center;
+    font-size: 22px;
+    font-weight: 500;
+  }
+
+  &__specification {
+    margin-top: 30px;
+  }
+
+  &__action {
+    padding: 20px 0;
+    text-align: center;
+  }
+
+  &__action-wrap {
+    padding-top: 20px;
+  }
+}
+
+//удалить .del тут и в разметке object-page
+.del {
+  display: none;
+}

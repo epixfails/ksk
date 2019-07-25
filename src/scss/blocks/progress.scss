@@ -1,0 +1,40 @@
+.progress {
+
+  &__inner {
+    padding: 10px;
+  }
+
+  &__title {
+    font-size: 16px;
+  }
+
+  &__link {
+    display: none;
+  }
+
+  &__bar {
+    font-size: 12px;
+    margin-top: 10px;
+  }
+
+  &__bar-item {
+    width: 140px;
+    margin-top: 10px;
+    padding: 2px;
+    border: 0.5px solid rgba(0, 0, 0, 0.51);
+    border-radius: 1px;
+    text-align: center;
+  }
+
+  &__bar-value {
+    background-color: $main-color;
+    width: 30%;
+    height: 13px;
+  }
+
+  &__bar-text {
+    display: inline-block;
+    font-size: 12px;
+    padding: 2px 0;
+  }
+}
