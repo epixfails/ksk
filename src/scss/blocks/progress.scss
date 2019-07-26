@@ -2,19 +2,50 @@
 
   &__inner {
     padding: 10px;
+
+    @media (min-width: $screen-xl) {
+      display: flex;
+      flex-direction: column;
+    }
   }
 
   &__title {
     font-size: 16px;
+
+    @media (min-width: $screen-lg) {
+      font-size: 20px;
+    }
   }
 
   &__link {
     display: none;
+
+    @media (min-width: $screen-lg) {
+      display: block;
+    }
+
+    @media (min-width: $screen-xl) {
+      margin-top: auto;
+    }
+  }
+
+  &__link a {
+    font-size: 14px;
+    color: $main-color;
+    text-decoration: none;
   }
 
   &__bar {
     font-size: 12px;
     margin-top: 10px;
+
+    @media (min-width: $screen-lg) {
+      font-size: 14px;
+    }
+
+    @media (min-width: $screen-xl) {
+      margin-top: auto;
+    }
   }
 
   &__bar-item {
@@ -24,11 +55,19 @@
     border: 0.5px solid rgba(0, 0, 0, 0.51);
     border-radius: 1px;
     text-align: center;
+
+    @media (min-width: $screen-lg) {
+      width: 300px;
+    }
+
+    @media (min-width: $screen-xl) {
+      margin-top: 15px;
+    }
   }
 
   &__bar-value {
     background-color: $main-color;
-    width: 30%;
+    width: 74%;
     height: 13px;
   }
 

@@ -38,6 +38,16 @@ $( document ).ready(function() {
 
   });
 
+
+  $('.specification__tab').click(function(){
+
+    $('.specification__tab').removeClass('specification__tab--active');
+    $(this).addClass('specification__tab--active');
+    $('.specification__show').removeClass('specification__show--on');
+    $('.specification__show').eq($(this).index()).addClass('specification__show--on');
+
+  });
+
   // ПРОМО СЛАЙДЕР
   $('.promo__slider').slick({
     infinite: true,

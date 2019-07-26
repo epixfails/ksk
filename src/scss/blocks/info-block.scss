@@ -9,19 +9,27 @@
 
   &__specification {
     margin-top: 30px;
+
+    @media (min-width: $screen-lg) {
+      width: 65%;
+      margin: 0 auto;
+    }
+
+    @media (min-width: $screen-xl) {
+      width: 75%;
+    }
   }
 
   &__action {
     padding: 20px 0;
     text-align: center;
+
+    @media (min-width: $screen-xl) {
+      font-size: 22px;
+    }
   }
 
   &__action-wrap {
     padding-top: 20px;
   }
-}
-
-//удалить .del тут и в разметке object-page
-.del {
-  display: none;
 }
