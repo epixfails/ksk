@@ -1,0 +1,51 @@
+.advantages-list {
+  list-style: none;
+  padding-left: 35px;
+
+  &__item {
+    position: relative;
+    margin-top: 20px;
+    font-size: 15px;
+  }
+
+  &__item:before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 24px;
+    height: 27px;
+    left: -35px;
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    @media (min-width: $screen-lg) {
+      width: 35px;
+      height: 35px;
+      left: -50px;
+    }
+  }
+
+  &__item--square:before {
+    background-image: url(../img/description/1.png);
+  }
+
+  &__item--lift:before {
+    background-image: url(../img/description/2.png);
+  }
+
+  &__item-layout:before {
+    background-image: url(../img/description/3.png);
+  }
+
+  &__item--nature:before {
+    background-image: url(../img/description/4.png);
+  }
+
+  &__item--windows:before {
+    background-image: url(../img/description/5.png);
+  }
+
+  &__item--roads:before {
+    background-image: url(../img/description/6.png);
+  }
+}

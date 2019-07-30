@@ -1,0 +1,119 @@
+.description {
+  padding: 25px;
+
+  &__advantages-title h2,
+  &__location-title h2,
+  &__renovation-title h2,
+  &__district-title h2 {
+    font-size: 22px;
+    font-weight: 500;
+    text-align: center;
+  }
+
+  &__location,
+  &__renovation,
+  &__district,
+  &__district-infrastructure {
+    margin-top: 50px;
+  }
+
+  &__location-img,
+  &__renovation-slider,
+  &__renovation-list,
+  &__district-slider {
+    margin-top: 30px;
+  }
+
+  &__location-text {
+    font-size: 15px;
+    margin-top: 30px;
+  }
+
+  &__renovation-text {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  &__advantages-items {
+
+    @media (min-width: $screen-lg) {
+      width: 50%;
+      margin: 0 auto;
+    }
+  }
+
+  &__location {
+
+    @media (min-width: $screen-lg) {
+      width: 65%;
+      margin: 0 auto;
+      margin-top: 50px;
+    }
+  }
+
+  &__location-text {
+
+    @media (min-width: $screen-lg) {
+      width: 80%;
+      margin: 0 auto;
+      margin-top: 25px;
+    }
+  }
+
+  &__renovation {
+
+    @media (min-width: $screen-lg) {
+      display: flex;
+      flex-direction: column;
+      width: 65%;
+      margin: 0 auto;
+      margin-top: 50px;
+    }
+  }
+
+  &__renovation-title {
+
+    @media (min-width: $screen-lg) {
+      order: -2;
+    }
+  }
+
+  &__renovation-text {
+
+    @media (min-width: $screen-lg) {
+      margin-top: 25px;
+    }
+  }
+
+  &__renovation-slider {
+
+    @media (min-width: $screen-lg) {
+      order: -1;
+    }
+  }
+
+  &__renovation-list {
+
+    @media (min-width: $screen-lg) {
+      width: 80%;
+      margin: 0 auto;
+      margin-top: 25px;
+    }
+  }
+
+  &__district {
+
+    @media (min-width: $screen-lg) {
+      width: 65%;
+      margin: 0 auto;
+      margin-top: 50px;
+    }
+  }
+
+  &__district-infrastructure {
+
+    @media (min-width: $screen-lg) {
+      margin: 50px -50px;
+    }
+  }
+}

@@ -1,0 +1,76 @@
+.infrastructure {
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px;
+  }
+
+  &__item {
+    width: 50%;
+    padding: 15px;
+
+    @media (min-width: $screen-sm) {
+      padding: 15px 70px;
+    }
+
+    @media (min-width: $screen-lg) {
+      position: relative;
+    }
+  }
+
+  &__item:before {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 40px;
+    margin: 0 auto;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    @media (min-width: $screen-lg) {
+      position: absolute;
+      left: 0;
+    }
+  }
+
+  &__item--education:before {
+    background-image: url(../img/infrastructure/education.png);
+  }
+
+  &__item--medical:before {
+    background-image: url(../img/infrastructure/medical.png);
+  }
+
+  &__item--sport:before {
+    background-image: url(../img/infrastructure/sport.png);
+  }
+
+  &__item--sciens:before {
+    background-image: url(../img/infrastructure/sciens.png);
+  }
+
+  &__item--creation:before {
+    background-image: url(../img/infrastructure/creation.png);
+  }
+
+  &__item--rest:before {
+    background-image: url(../img/infrastructure/rest.png);
+  }
+
+  &__title {
+    font-size: 20px;
+    text-align: center;
+
+    @media (min-width: $screen-lg) {
+      text-align: left;
+    }
+  }
+
+  &__text {
+    font-size: 15px;
+  }
+  &__text span {
+    display: block;
+  }
+}
