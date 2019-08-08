@@ -16,7 +16,7 @@
       display: block;
     }
   }
-  
+
   &__menu--active {
     display: block;
     position: absolute;
@@ -25,7 +25,7 @@
     right: -15px;
     background-color: $main-color;
     z-index: 1;
-    
+
     @media (min-width: $screen-lg) {
       position: staric;
     }
@@ -124,13 +124,13 @@
   &__sub-link {
     color: $text-color-white;
     text-decoration: none;
-     
+
     @media (min-width: $screen-lg) {
       font-size: 16px;
       color: $text-color;
     }
   }
-  
+
   &__link--text-color,
   &__sub-link--text-color {
     color: $text-color;
@@ -167,7 +167,7 @@
     bottom: 8px;
     transform: rotate(45deg);
     transition: all 0.2s ease-in-out;
-    
+
     @media (min-width: $screen-lg) {
       border-right: 2px solid $main-color;
       border-bottom: 2px solid $main-color;
@@ -175,6 +175,7 @@
   }
 
   &__link--active:after {
+    top: 6px;
     transform: rotate(-135deg);
     transition: all 0.2s ease-in-out;
   }
@@ -184,12 +185,12 @@
   }
 
   &__link--hidden {
-    
+
     @media (min-width: $screen-lg) {
       display: block;
     }
   }
-  
+
 
   &__toggle {
     position: relative;
@@ -199,7 +200,7 @@
     outline: none;
     background-color: transparent;
     padding: 0;
-     
+
     @media (min-width: $screen-lg) {
       display: none;
     }

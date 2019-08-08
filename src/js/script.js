@@ -1,6 +1,6 @@
 
 $( document ).ready(function() {
-  
+
   // БУРГЕР
   $('.main-nav__toggle').click(function(e) {
     e.preventDefault;
@@ -14,20 +14,38 @@ $( document ).ready(function() {
     var width = $(window).width();
 
     $(this).toggleClass('main-nav__link--active').next().slideToggle();
-    
+
     if (width >= 1200) {
       $('.main-nav__link').not(this).removeClass('main-nav__link--active').next().slideUp();
     }
   });
-  
+
   $('.page-footer__nav-link').click(function(){
     var width = $(window).width();
 
     $(this).toggleClass('page-footer__nav-link--active').next().slideToggle();
-    
+
     if (width >= 1200) {
       $('.page-footer__nav-link').not(this).removeClass('page-footer__nav-link--active').next().slideUp();
     }
+  });
+
+
+  $('.files-accardion__title').click(function(){
+
+    $(this).toggleClass('files-accardion__title--active').next().slideToggle();
+    $('.files-accardion__title').not(this).removeClass('files-accardion__title--active').next().slideUp();
+
+  });
+
+
+  $('.specification__tab').click(function(){
+
+    $('.specification__tab').removeClass('specification__tab--active');
+    $(this).addClass('specification__tab--active');
+    $('.specification__show').removeClass('specification__show--on');
+    $('.specification__show').eq($(this).index()).addClass('specification__show--on');
+
   });
 
   // ПРОМО СЛАЙДЕР
@@ -63,5 +81,11 @@ $( document ).ready(function() {
         }
       }
     ]
+  });
+
+  // СЛАЙДЕР ОБЩИЙ ВИД
+  $('.pictures-slider').slick({
+    slidesToShow: 1,
+    adaptiveHeight: true
   });
 });

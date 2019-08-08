@@ -1,0 +1,47 @@
+.files-accardion {
+
+  &__item {
+    position: relative;
+  }
+
+  &__title:before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    left: -25px;
+    background: linear-gradient(to bottom right, transparent 49%, $main-color 51%);
+    transform: rotate(45deg);
+    transition: all 0.3s;
+  }
+
+  &__title {
+    font-size: 15px;
+
+    &--active {
+      display: block;
+    }
+
+    &--active:before {
+      top: 7px;
+      transform: rotate(225deg);
+    }
+  }
+
+  &__file-link {
+    display: none;
+    padding-left: 25px;
+  }
+
+  &__file-link a,
+  &__file-link span {
+    display: block;
+    font-size: 14px;
+    text-decoration: none;
+  }
+
+  &__file-link p {
+    color: rgba(0, 0, 0, 0.75);
+  }
+}

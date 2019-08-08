@@ -1,0 +1,30 @@
+.pictures-slider {
+  position: relative;
+  padding: 0 12px;
+  padding-top: 12px;
+
+  & .slick-arrow {
+    position: absolute;
+    outline: none;
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    font-size: 0;
+    border: none;
+    border-left: 1px solid $main-color;
+    border-bottom: 1px solid $main-color;
+    background-color: transparent;
+  }
+
+  & .slick-prev {
+    left: 20px;
+    bottom: -35px;
+    transform: rotate(45deg);
+  }
+
+  & .slick-next {
+    right: 20px;
+    bottom: -35px;
+    transform: rotate(225deg);
+  }
+}
