@@ -1,7 +1,7 @@
 @font-face {
   font-family: 'Rubik';
   src: url('../fonts/subset-Rubik-Regular.woff2') format('woff2'),
-      url('../fonts/subset-Rubik-Regular.woff') format('woff');
+    url('../fonts/subset-Rubik-Regular.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
@@ -9,7 +9,7 @@
 @font-face {
   font-family: 'PT Sans';
   src: url('../fonts/subset-PTSans-Regular.woff2') format('woff2'),
-      url('../fonts/subset-PTSans-Regular.woff') format('woff');
+    url('../fonts/subset-PTSans-Regular.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
@@ -17,7 +17,7 @@
 @font-face {
   font-family: 'Roboto';
   src: url('../fonts/subset-Roboto-Regular.woff2') format('woff2'),
-      url('../fonts/subset-Roboto-Regular.woff') format('woff');
+    url('../fonts/subset-Roboto-Regular.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
@@ -25,7 +25,7 @@
 @font-face {
   font-family: 'PT Sans';
   src: url('../fonts/subset-PTSans-Bold.woff2') format('woff2'),
-      url('../fonts/subset-PTSans-Bold.woff') format('woff');
+    url('../fonts/subset-PTSans-Bold.woff') format('woff');
   font-weight: bold;
   font-style: normal;
 }
@@ -38,7 +38,6 @@
   height: 1px;
   margin: -1px;
 }
-
 
 html {
   font-family: sans-serif;
@@ -82,12 +81,12 @@ label,
 select,
 textarea {
   touch-action: manipulation; // Стилевая коррекция 300ms задержки (для поддерживающих браузеров)
-  margin: 0;                  // Убираем margin в Firefox и Safari
+  margin: 0; // Убираем margin в Firefox и Safari
 }
 
 button,
 input {
-  overflow: visible;    // Покажем торчащее в Edge
+  overflow: visible; // Покажем торчащее в Edge
   text-transform: none; // Уберём наследование text transform в Firefox
 }
 
@@ -122,7 +121,7 @@ input[type='text'] {
 }
 
 textarea {
-  overflow: auto;   // Удаление верт. скролла в IE.
+  overflow: auto; // Удаление верт. скролла в IE.
   resize: vertical; // Правильное изменение размеров
 }
 
@@ -302,4 +301,9 @@ pre {
   width: 100%;
   overflow-x: auto;
   tab-size: 2;
+}
+
+.container {
+  max-width: 1400px;
+  margin: auto;
 }

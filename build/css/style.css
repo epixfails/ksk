@@ -250,6 +250,10 @@ pre {
     -o-tab-size: 2;
        tab-size: 2; }
 
+.container {
+  max-width: 1400px;
+  margin: auto; }
+
 /* Slider */
 .slick-slider {
   position: relative;
@@ -1643,20 +1647,77 @@ pre {
   .maps__item {
     margin: 15px 0; }
 
-.maps {
+.object__list {
+  max-width: 1200px;
+  margin: auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  padding: 0 25px; }
-  @media (min-width: 1200px) {
-    .maps {
-      padding: 35px;
-      margin-bottom: 15px; } }
-  .maps__item {
-    margin: 15px 0; }
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 20px 0; }
+  .object__list-item {
+    width: 250px;
+    display: block;
+    margin: 0 30px 30px 0;
+    text-align: center;
+    text-decoration: none;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    -webkit-box-shadow: 0px 4px 8px #d9d9d9;
+            box-shadow: 0px 4px 8px #d9d9d9;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s; }
+    .object__list-item:hover {
+      text-decoration: none;
+      -webkit-box-shadow: 0px 4px 8px #969696;
+              box-shadow: 0px 4px 8px #969696; }
+      .object__list-item:hover > div {
+        color: #039577; }
+    .object__list-item__info {
+      padding: 10px;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.07); }
+      .object__list-item__info-title {
+        margin: 0;
+        font-weight: 700; }
+      .object__list-item__info-meta {
+        margin: 0; }
+    .object__list-item__status {
+      padding: 15px;
+      margin: 0; }
+
+.filter-wrapper {
+  max-width: 1200px;
+  background-color: #039577;
+  padding: 15px; }
+
+.loans__wrapper {
+  padding: 20px 0; }
+
+.loans__title > h3 {
+  font-weight: 400; }
+
+.loans__text {
+  font-size: 15px;
+  width: 70%; }
+  @media (max-width: 479px) {
+    .loans__text {
+      width: 100%; } }
+
+.loan__text {
+  -ms-flex-item-align: start;
+      -ms-grid-row-align: start;
+      align-self: start;
+  padding: 20px 40px 0 20px; }
+  .loan__text > .features__title {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start; }
+
+.loan__img {
+  -webkit-box-shadow: 0px 4px 8px #d9d9d9;
+          box-shadow: 0px 4px 8px #d9d9d9; }
 
 /*# sourceMappingURL=style.css.map */

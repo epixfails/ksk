@@ -1,0 +1,35 @@
+.loans {
+  &__wrapper {
+    padding: 20px 0;
+  }
+
+  &__title {
+    > h3 {
+      font-weight: 400;
+    }
+  }
+
+  &__text {
+    font-size: 15px;
+    width: 70%;
+
+    @media (max-width: $screen-xs) {
+      width: 100%;
+    }
+  }
+}
+
+.loan {
+  &__text {
+    align-self: start;
+    padding: 20px 40px 0 20px;
+
+    > .features__title {
+      justify-content: flex-start;
+    }
+  }
+
+  &__img {
+    box-shadow: 0px 4px 8px #d9d9d9;
+  }
+}
