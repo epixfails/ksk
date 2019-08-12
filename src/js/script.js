@@ -88,4 +88,10 @@ $( document ).ready(function() {
     slidesToShow: 1,
     adaptiveHeight: true
   });
+
+  // СЛАЙДЕР ПЛАНИРОВОК
+  $('.plans-slider').slick({
+    slidesToShow: 1,
+    adaptiveHeight: true
+  });
 });

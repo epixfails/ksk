@@ -7,6 +7,14 @@
     box-shadow: 0px 4px 8px rgb(217, 217, 217);
   }
 
+  &__img {
+
+    &--frame {
+      padding: 15px 30px;
+      background: rgba(255, 138, 0, 0.25);
+    }
+  }
+
   &__title {
     padding: 20px;
 
@@ -60,5 +68,26 @@
     background-image: url(../img/card-mini/arrow-next.png);
     background-repeat: no-repeat;
     background-size: cover;
+  }
+
+  &__room-value {
+    font-size: 22px;
+    padding: 0 25px;
+  }
+
+  &__object-status,
+  &__square {
+    font-size: 16px;
+    padding: 5px 25px;
+  }
+
+  &__square {
+    margin-top: 25px;
+  }
+
+  &__square-value {
+    font-size: 20px;
+    padding: 0 25px;
+    padding-bottom: 10px;
   }
 }

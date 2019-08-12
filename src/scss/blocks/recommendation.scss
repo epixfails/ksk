@@ -1,0 +1,27 @@
+.recommendation {
+  padding: 0 25px;
+  margin-bottom: 45px;
+
+  &__wrap {
+    border: 2px solid $main-color;
+  }
+
+  &__title {
+    text-align: center;
+  }
+
+  &__title h2 {
+    font-size: 22px;
+    font-weight: normal;
+  }
+
+  &__cards {
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px;
+  }
+
+  &__cards-item {
+    margin: 25px 0;
+  }
+}
