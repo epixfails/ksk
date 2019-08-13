@@ -26,6 +26,12 @@
       width: 35%;
       margin: 0;
     }
+
+    @media (min-width: $screen-lg) {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
   }
 
   &__object-link {
@@ -35,6 +41,27 @@
   &__object-link a {
     font-size: 14px;
     color: $second-color;
+
+    @media (min-width: $screen-sm) {
+      font-size: 18px;
+    }
+
+    @media (min-width: $screen-lg) {
+      font-size: 30px;
+    }
+  }
+
+  &__room-value {
+    font-size: 14px;
+    font-weight: 700;
+
+    @media (min-width: $screen-sm) {
+      font-size: 16px;
+    }
+
+    @media (min-width: $screen-lg) {
+      font-size: 26px;
+    }
   }
 
   &__object-status {
@@ -45,6 +72,14 @@
   &__prop {
     text-transform: uppercase;
     font-size: 12px;
+
+    @media (min-width: $screen-sm) {
+      font-size: 13px;
+    }
+
+    @media (min-width: $screen-lg) {
+      font-size: 18px;
+    }
   }
 
   &__square-value {
@@ -54,15 +89,15 @@
     margin-left: 1em;
   }
 
-  &__room-value {
-    font-size: 14px;
-    font-weight: 700;
-  }
-
   &__value,
   &__price-value {
     font-size: 24px;
     color: $main-color;
+
+    @media (min-width: $screen-sm) {
+      font-size: 26px;
+      font-weight: bold;
+    }
   }
 
   &__download-link {
@@ -73,6 +108,14 @@
     text-decoration: none;
     text-transform: uppercase;
     font-size: 12px;
+
+    @media (min-width: $screen-sm) {
+      font-size: 14px;
+    }
+
+    @media (min-width: $screen-lg) {
+      font-size: 16px;
+    }
   }
 
   &__download-link a:before {
@@ -81,6 +124,19 @@
     width: 30px;
     height: 30px;
     background-image: url(../img/apart-info/document.png);
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover;
+
+    @media (min-width: $screen-sm) {
+      width: 40px;
+      height: 40px;
+    }
+
+    @media (min-width: $screen-lg) {
+      width: 50px;
+      height: 50px;
+    }
   }
 
   &__plans {
@@ -101,7 +157,6 @@
 
     @media (min-width: $screen-sm) {
       padding: 10px 60px;
-      max-height: 295px;
     }
   }
 
@@ -119,17 +174,25 @@
   }
 
   & .slick-prev {
-    left: 25px;
+    left: 0;
     top: 50%;
     transform: rotate(45deg);
     transform-origin: center;
+
+    @media (min-width: $screen-sm) {
+      left: 25px;
+    }
   }
 
   & .slick-next {
-    right: 25px;
+    right: 0;
     top: 50%;
     transform: rotate(225deg);
     transform-origin: center;
+
+    @media (min-width: $screen-sm) {
+      right: 25px;
+    }
   }
 
   &__booking-link {

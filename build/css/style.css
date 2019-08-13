@@ -1769,40 +1769,90 @@ pre {
       .apart-info__descr {
         width: 35%;
         margin: 0; } }
+    @media (min-width: 1200px) {
+      .apart-info__descr {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between; } }
   .apart-info__object-link {
     margin-bottom: 1em; }
   .apart-info__object-link a {
     font-size: 14px;
     color: #039577; }
+    @media (min-width: 768px) {
+      .apart-info__object-link a {
+        font-size: 18px; } }
+    @media (min-width: 1200px) {
+      .apart-info__object-link a {
+        font-size: 30px; } }
+  .apart-info__room-value {
+    font-size: 14px;
+    font-weight: 700; }
+    @media (min-width: 768px) {
+      .apart-info__room-value {
+        font-size: 16px; } }
+    @media (min-width: 1200px) {
+      .apart-info__room-value {
+        font-size: 26px; } }
   .apart-info__object-status {
     text-transform: uppercase;
     font-size: 16px; }
   .apart-info__prop {
     text-transform: uppercase;
     font-size: 12px; }
+    @media (min-width: 768px) {
+      .apart-info__prop {
+        font-size: 13px; } }
+    @media (min-width: 1200px) {
+      .apart-info__prop {
+        font-size: 18px; } }
   .apart-info__square-value {
     display: inline-block;
     text-transform: lowercase;
     font-size: 26px;
     margin-left: 1em; }
-  .apart-info__room-value {
-    font-size: 14px;
-    font-weight: 700; }
   .apart-info__value, .apart-info__price-value {
     font-size: 24px;
     color: #ee7231; }
+    @media (min-width: 768px) {
+      .apart-info__value, .apart-info__price-value {
+        font-size: 26px;
+        font-weight: bold; } }
   .apart-info__download-link {
     margin-top: 1em; }
   .apart-info__download-link a {
     text-decoration: none;
     text-transform: uppercase;
     font-size: 12px; }
+    @media (min-width: 768px) {
+      .apart-info__download-link a {
+        font-size: 14px; } }
+    @media (min-width: 1200px) {
+      .apart-info__download-link a {
+        font-size: 16px; } }
   .apart-info__download-link a:before {
     content: '';
     display: block;
     width: 30px;
     height: 30px;
-    background-image: url(../img/apart-info/document.png); }
+    background-image: url(../img/apart-info/document.png);
+    background-repeat: no-repeat;
+    background-size: cover; }
+    @media (min-width: 768px) {
+      .apart-info__download-link a:before {
+        width: 40px;
+        height: 40px; } }
+    @media (min-width: 1200px) {
+      .apart-info__download-link a:before {
+        width: 50px;
+        height: 50px; } }
   .apart-info__plans {
     -webkit-box-ordinal-group: 0;
         -ms-flex-order: -1;
@@ -1828,8 +1878,7 @@ pre {
     padding: 30px; }
     @media (min-width: 768px) {
       .apart-info__plans-slider {
-        padding: 10px 60px;
-        max-height: 295px; } }
+        padding: 10px 60px; } }
   .apart-info .slick-arrow {
     position: absolute;
     outline: none;
@@ -1842,19 +1891,25 @@ pre {
     border-bottom: 1px solid #ee7231;
     background-color: transparent; }
   .apart-info .slick-prev {
-    left: 25px;
+    left: 0;
     top: 50%;
     -webkit-transform: rotate(45deg);
             transform: rotate(45deg);
     -webkit-transform-origin: center;
             transform-origin: center; }
+    @media (min-width: 768px) {
+      .apart-info .slick-prev {
+        left: 25px; } }
   .apart-info .slick-next {
-    right: 25px;
+    right: 0;
     top: 50%;
     -webkit-transform: rotate(225deg);
             transform: rotate(225deg);
     -webkit-transform-origin: center;
             transform-origin: center; }
+    @media (min-width: 768px) {
+      .apart-info .slick-next {
+        right: 25px; } }
   .apart-info__booking-link {
     text-align: center; }
   .apart-info__preview-link {
@@ -1906,8 +1961,12 @@ pre {
         padding: 0 15px; } }
   .recommendation__cards-item:last-child {
     display: none; }
+    @media (min-width: 1200px) {
+      .recommendation__cards-item:last-child {
+        display: block; } }
 
 .plans-slider__item img {
-  margin: 0 auto; }
+  margin: 0 auto;
+  max-height: 100%; }
 
 /*# sourceMappingURL=style.css.map */

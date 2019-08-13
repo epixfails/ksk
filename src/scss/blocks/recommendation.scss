@@ -41,5 +41,9 @@
 
   &__cards-item:last-child {
     display: none; // ЭТО ПРАВИЛО ТОЛЬКО ДЛЯ ВЕРСТКИ, ВЫПИЛИТЬ! КОЛ-ВО КАРТОЧЕК, ВЕРОЧТНО, БУДЕТ ВЫВОДИТСЯ СКРИПТОМ??
+
+    @media (min-width: $screen-lg) {
+      display: block;
+    }
   }
 }
