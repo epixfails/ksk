@@ -48,6 +48,15 @@ $( document ).ready(function() {
 
   });
 
+  //АККАРДИОН КОММЕРЧ ПОМЕЩЕНИЙ
+  $('.object-block__show-btn').click(function(e){
+    e.preventDefault();
+
+    $(this).toggleClass('object-block__show-btn--active').next().slideToggle();
+    $('.object-block__show-btn').not(this).removeClass('object-block__show-btn--active').next().slideUp();
+
+  });
+
   // ПРОМО СЛАЙДЕР
   $('.promo__slider').slick({
     infinite: true,

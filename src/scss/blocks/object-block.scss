@@ -1,0 +1,129 @@
+.object-block {
+  display: flex;
+  flex-direction: column;
+  margin: 30px 0;
+
+  &__header {
+    padding: 15px;
+
+    @media (min-width: $screen-lg) {
+      display: flex;
+      border-bottom: 1px solid #cdcdcd;
+    }
+  }
+
+  &__header-pic {
+
+    @media (min-width: $screen-lg) {
+      width: 50%;
+    }
+  }
+
+  &__descr {
+
+    @media (min-width: $screen-lg) {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      padding: 0 120px;
+    }
+  }
+
+  &__title {
+    font-size: 20px;
+    text-align: center;
+    margin: 10px 0;
+
+    @media (min-width: $screen-lg) {
+      font-size: 30px;
+    }
+  }
+
+  &__adress {
+    font-size: 15px;
+    text-align: center;
+    margin: 10px 0;
+
+    @media (min-width: $screen-lg) {
+      font-size: 20px;
+    }
+  }
+
+  &__free-premise {
+    font-size: 17px;
+    text-align: center;
+    margin: 20px 0;
+
+    @media (min-width: $screen-lg) {
+      font-size: 30px;
+      margin-top: auto;
+    }
+  }
+
+  &__free-premise-count {
+    display: block;
+    font-size: 28px;
+    font-weight: 700;
+    text-align: center;
+    color: $main-color;
+
+    @media (min-width: $screen-lg) {
+      font-size: 64px;
+    }
+  }
+
+  &__show-btn {
+    display: block;
+    width: 100%;
+    border: none;
+    background-color: $main-color;
+    padding: 15px;
+    color: $white;
+    font-size: 18px;
+    order: 1;
+
+    & span:after {
+      content: '';
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      margin-left: 15px;
+      border-right: 2px solid $white;
+      border-bottom: 2px solid $white;
+      transform: rotate(45deg);
+      transform-origin: center;
+      transition: all 0.3s;
+    }
+
+    &--active span:after {
+      transform: rotate(225deg);
+    }
+  }
+
+  &__show-btn:focus {
+    padding: 15px;
+  }
+
+  &__list {
+    display: none;
+  }
+
+  &__list-inner {
+    padding: 0 20px;
+
+    @media (min-width: $screen-sm) {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+
+  &__item {
+    margin: 30px 0;
+
+    @media (min-width: $screen-sm) {
+      width: 33%;
+      padding: 0 15px;
+    }
+  }
+}

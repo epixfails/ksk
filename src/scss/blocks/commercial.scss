@@ -1,0 +1,16 @@
+.commercial {
+  padding: 0 25px;
+
+  &__title {
+    text-align: center;
+  }
+
+  &__titile h2 {
+    font-size: 22px;
+    font-weight: 500;
+  }
+
+  &__object-block {
+    border: 5px solid #cdcdcd;
+  }
+}
