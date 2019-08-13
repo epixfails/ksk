@@ -10,12 +10,22 @@
   &__wrap {
     display: flex;
     flex-direction: column;
+
+    @media (min-width: $screen-sm) {
+      flex-direction: row;
+      margin: 30px 0;
+    }
   }
 
   &__descr {
     border: 2px solid $main-color;
     padding: 15px 35px;
     margin: 30px 0;
+
+    @media (min-width: $screen-sm) {
+      width: 35%;
+      margin: 0;
+    }
   }
 
   &__object-link {
@@ -75,11 +85,24 @@
 
   &__plans {
     order: -1;
+
+    @media (min-width: $screen-sm) {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      order: 1;
+      width: 65%;
+    }
   }
 
   &__plans-slider {
     position: relative;
     padding: 30px;
+
+    @media (min-width: $screen-sm) {
+      padding: 10px 60px;
+      max-height: 295px;
+    }
   }
 
   & .slick-arrow {
@@ -96,14 +119,14 @@
   }
 
   & .slick-prev {
-    left: 0;
+    left: 25px;
     top: 50%;
     transform: rotate(45deg);
     transform-origin: center;
   }
 
   & .slick-next {
-    right: 0;
+    right: 25px;
     top: 50%;
     transform: rotate(225deg);
     transform-origin: center;
@@ -115,5 +138,14 @@
 
   &__preview-link {
     display: none;
+
+    @media (min-width: $screen-sm) {
+      display: block;
+      text-align: center;
+    }
+  }
+
+  &__preview-link a {
+    color: $second-color;
   }
 }

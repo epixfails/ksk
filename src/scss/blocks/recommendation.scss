@@ -2,6 +2,10 @@
   padding: 0 25px;
   margin-bottom: 45px;
 
+  @media (min-width: $screen-sm) {
+    margin-top: 60px;
+  }
+
   &__wrap {
     border: 2px solid $main-color;
   }
@@ -19,9 +23,23 @@
     display: flex;
     flex-direction: column;
     padding: 0 20px;
+
+    @media (min-width: $screen-sm) {
+      flex-direction: row;
+      margin: 0 -15px;
+    }
   }
 
   &__cards-item {
     margin: 25px 0;
+
+    @media (min-width: $screen-sm) {
+      flex-direction: row;
+      padding: 0 15px;
+    }
+  }
+
+  &__cards-item:last-child {
+    display: none; // ЭТО ПРАВИЛО ТОЛЬКО ДЛЯ ВЕРСТКИ, ВЫПИЛИТЬ! КОЛ-ВО КАРТОЧЕК, ВЕРОЧТНО, БУДЕТ ВЫВОДИТСЯ СКРИПТОМ??
   }
 }
