@@ -326,6 +326,9 @@ pre {
 .slick-arrow.slick-hidden {
   display: none; }
 
+.slick-initialized {
+  visibility: visible; }
+
 .page-header {
   padding: 15px 15px; }
   .page-header__inner {
@@ -612,9 +615,11 @@ pre {
       width: 160px;
       padding-right: 20px; } }
 
-@media (min-width: 1200px) {
-  .promo__inner {
-    padding: 15px; } }
+.promo__inner {
+  visibility: hidden; }
+  @media (min-width: 1200px) {
+    .promo__inner {
+      padding: 15px; } }
 
 .promo__slider {
   position: relative; }
@@ -1266,12 +1271,16 @@ pre {
                 flex-grow: 1; } }
     .specification__tab--active {
       background-color: #fff3ec; }
-  @media (min-width: 768px) {
-    .specification__pictures {
-      padding: 15px; } }
-  @media (min-width: 1200px) {
-    .specification__pictures {
-      padding: 15px 70px; } }
+  .specification__pictures {
+    visibility: hidden; }
+    @media (min-width: 768px) {
+      .specification__pictures {
+        padding: 15px; } }
+    @media (min-width: 1200px) {
+      .specification__pictures {
+        padding: 15px 70px; } }
+    .specification__pictures span {
+      visibility: visible; }
   .specification__pictures span {
     display: block;
     margin: 15px 0;
@@ -1708,6 +1717,9 @@ pre {
       padding: 15px;
       margin: 0; }
 
+.object__inner {
+  visibility: hidden; }
+
 .filter-wrapper {
   max-width: 1200px;
   background-color: #039577;
@@ -1856,7 +1868,8 @@ pre {
   .apart-info__plans {
     -webkit-box-ordinal-group: 0;
         -ms-flex-order: -1;
-            order: -1; }
+            order: -1;
+    visibility: hidden; }
     @media (min-width: 768px) {
       .apart-info__plans {
         display: -webkit-box;
@@ -1911,9 +1924,11 @@ pre {
       .apart-info .slick-next {
         right: 25px; } }
   .apart-info__booking-link {
-    text-align: center; }
+    text-align: center;
+    visibility: visible; }
   .apart-info__preview-link {
-    display: none; }
+    display: none;
+    visibility: visible; }
     @media (min-width: 768px) {
       .apart-info__preview-link {
         display: block;

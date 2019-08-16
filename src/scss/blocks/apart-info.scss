@@ -141,6 +141,7 @@
 
   &__plans {
     order: -1;
+    visibility: hidden;
 
     @media (min-width: $screen-sm) {
       display: flex;
@@ -197,10 +198,12 @@
 
   &__booking-link {
     text-align: center;
+    visibility: visible;
   }
 
   &__preview-link {
     display: none;
+    visibility: visible;
 
     @media (min-width: $screen-sm) {
       display: block;

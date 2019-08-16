@@ -26,6 +26,7 @@
   }
 
   &__pictures {
+    visibility: hidden;
 
     @media (min-width: $screen-sm) {
       padding: 15px;
@@ -33,6 +34,10 @@
 
     @media (min-width: $screen-lg) {
       padding: 15px 70px;
+    }
+
+    & span {
+      visibility: visible;
     }
   }
 
