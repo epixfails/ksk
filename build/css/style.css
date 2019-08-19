@@ -2713,9 +2713,6 @@ pre {
   @media (min-width: 1200px) {
     .obj-filter__complex {
       width: 25%; } }
-  @media (min-width: 1200px) {
-    .obj-filter__inner {
-      width: 75%; } }
   .obj-filter__inner {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -2729,15 +2726,24 @@ pre {
             align-items: flex-end;
     margin-left: -10px;
     margin-right: -10px; }
+    @media (min-width: 1200px) {
+      .obj-filter__inner {
+        width: 75%;
+        margin: 0; } }
   .obj-filter__deadline, .obj-filter__build-apartments {
     width: 50%;
     padding: 0 10px; }
   @media (min-width: 1200px) {
     .obj-filter__deadline {
       width: 35%; } }
+  @media (min-width: 768px) {
+    .obj-filter__deadline-wrap {
+      width: 270px; } }
   @media (min-width: 1200px) {
     .obj-filter__build-apartments {
-      width: 30%; } }
+      width: 30%;
+      padding-right: 0;
+      padding-left: 30px; } }
   .obj-filter__rooms {
     display: none; }
     @media (min-width: 1200px) {
@@ -2761,6 +2767,7 @@ pre {
     display: none; }
   .obj-filter__rooms-count label {
     display: block;
+    font-size: 28px;
     height: 100%;
     text-align: center;
     line-height: 45px;
@@ -2799,10 +2806,21 @@ pre {
     width: 50%;
     margin-bottom: 0;
     text-align: center; }
+    @media (min-width: 1200px) {
+      .obj-filter__results-text {
+        width: 30%;
+        font-size: 22px; } }
   .obj-filter__results-btn {
     width: 50%;
     min-height: 45px;
     font-size: 16px;
     border: none; }
+    @media (min-width: 1200px) {
+      .obj-filter__results-btn {
+        width: 20%; } }
+
+.select2-results__option {
+  background: #039577;
+  color: #ffffff; }
 
 /*# sourceMappingURL=style.css.map */
