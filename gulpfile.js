@@ -77,6 +77,7 @@ function copyVendorsJs () {
       './node_modules/svg4everybody/dist/svg4everybody.min.js',
       './node_modules/jquery/dist/jquery.min.js',
       './node_modules/slick-carousel/slick/slick.min.js',
+      './node_modules/select2/dist/js/select2.full.min.js',
     ])
     .pipe(dest(`${dir.build}js/`));
 }

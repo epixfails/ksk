@@ -87,7 +87,7 @@
       </ul>
     </div>
 
-    <div class="page__inner">
+    <div class="wrapper">
       <form class="obj-filter">
         <div class="obj-filter__title"><span>Какую квартиру вы ищете?</span></div>
         <div class="obj-filter__wrap">
@@ -95,6 +95,7 @@
             <div class="obj-filter__complex-title">Жилой комплекс</div>
             <div class="obj-filter__complex-wrap">
               <select name="object" class="obj-filter__complex-select">
+                <option></option>
                 <option value="obj1">ЖК Чудная долина</option>
                 <option value="obj2">ЖК Чудная долина</option>
                 <option value="obj3">ЖК Чудная долина</option>
@@ -106,6 +107,7 @@
               <div class="obj-filter__deadline-title">Срок сдачи</div>
               <div class="obj-filter__deadline-wrap">
                 <select name="deadline" class="obj-filter__deadline-select">
+                  <option></option>
                   <option value="date1">1 кв. 2020 г.</option>
                   <option value="date2">2 кв. 2020 г.</option>
                   <option value="date3">3 кв. 2020 г.</option>
@@ -116,16 +118,20 @@
               <div class="obj-filter__rooms-title">Количество комнат</div>
               <div class="obj-filter__rooms-wrap">
                 <span class="obj-filter__rooms-count">
-                  <input name="dzen" type="radio" value="nedzen">C
+                  <input type="radio" id="rm0" name="rooms" value="0">
+                  <label for="rm0">C</label>
                 </span>
                 <span class="obj-filter__rooms-count">
-                  <input name="dzen" type="radio" value="nedzen">1
+                  <input name="rooms" id="rm1" type="radio" value="1">
+                  <label for="rm1">1</label>
                 </span>
                 <span class="obj-filter__rooms-count">
-                  <input name="dzen" type="radio" value="nedzen">2
+                  <input name="rooms" id="rm2" type="radio" value="2">
+                  <label for="rm2">2</label>
                 </span>
                 <span class="obj-filter__rooms-count">
-                  <input name="dzen" type="radio" value="nedzen">3
+                  <input name="rooms" id="rm3" type="radio" value="3">
+                  <label for="rm3">3</label>
                 </span>
               </div>
             </div>
@@ -133,7 +139,22 @@
               <button class="obj-filter__build-apartments-btn">Готовые квартиры</button>
             </div>
           </div>
-          .obj-filter__
+          <div class="obj-filter__rooms-sel">
+            <div class="obj-filter__rooms-sel-title">Количество комнат</div>
+            <div class="obj-filter__rooms-sel-wrap">
+              <select name="rooms" class="obj-filter__rooms-sel-select">
+                <optionn></optionn>
+                <option value="C">Студия</option>
+                <option value="1">1 комната</option>
+                <option value="2">2 комнаты</option>
+                <option value="3">3 комнаты</option>
+              </select>
+            </div>
+          </div>
+          <div class="obj-filter__results">
+            <p class="obj-filter__results-text">Доступно <span>37</span> вариант(ов)</p>
+            <button class="obj-filter__results-btn">Смотреть квартиры</button>
+          </div>
         </div>
       </form>
     </div>
@@ -220,6 +241,7 @@
 
 <script src="./js/jquery.min.js"></script>
 <script src="./js/slick.min.js"></script>
+<script src="./js/select2.full.min.js"></script>
 <script src="./js/script.js"></script>
 </body>
 </html>

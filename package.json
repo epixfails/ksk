@@ -38,6 +38,7 @@
   "dependencies": {
     "jquery": "^3.4.1",
     "picturefill": "^3.0.3",
+    "select2": "^4.0.8",
     "slick-carousel": "^1.8.1",
     "svg4everybody": "^2.1.9"
   }

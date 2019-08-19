@@ -103,4 +103,25 @@ $( document ).ready(function() {
     slidesToShow: 1,
     adaptiveHeight: true
   });
+
+  //СЕЛЕКТ ФОРМЫ
+  $('.obj-filter__complex-select').select2({
+    minimumResultsForSearch: Infinity,
+    placeholder: "Все",
+    width: '270px'
+  });
+
+  $('.obj-filter__deadline-select').select2({
+    minimumResultsForSearch: Infinity,
+    placeholder: "Все",
+    width: '270px'
+  });
+
+  $('.obj-filter__rooms-sel-select').select2({
+    minimumResultsForSearch: Infinity,
+    placeholder: "Все",
+    width: '270px'
+  });
+
+
 });
