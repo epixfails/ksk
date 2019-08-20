@@ -31,6 +31,7 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      padding: 35px;
     }
   }
 
@@ -54,19 +55,31 @@
   &__room-value {
     font-size: 14px;
     font-weight: 700;
+    margin-bottom: 10px;
 
     @media (min-width: $screen-sm) {
       font-size: 16px;
+      margin-bottom: 15px;
     }
 
     @media (min-width: $screen-lg) {
       font-size: 26px;
+      margin-bottom: 20px;
     }
   }
 
   &__object-status {
     text-transform: uppercase;
     font-size: 16px;
+    margin-bottom: 10px;
+
+    @media (min-width: $screen-sm) {
+      margin-bottom: 15px;
+    }
+
+    @media (min-width: $screen-lg) {
+      margin-bottom: 20px;
+    }
   }
 
   &__prop {
@@ -82,11 +95,47 @@
     }
   }
 
+  &__square {
+    margin-bottom: 10px;
+
+    @media (min-width: $screen-sm) {
+      margin-bottom: 15px;
+    }
+
+    @media (min-width: $screen-lg) {
+      margin-bottom: 20px;
+    }
+  }
+
   &__square-value {
     display: inline-block;
     text-transform: lowercase;
     font-size: 26px;
     margin-left: 1em;
+  }
+
+  &__decoration {
+    margin-bottom: 10px;
+
+    @media (min-width: $screen-sm) {
+      margin-bottom: 15px;
+    }
+
+    @media (min-width: $screen-lg) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__price {
+    margin-bottom: 10px;
+
+    @media (min-width: $screen-sm) {
+      margin-bottom: 15px;
+    }
+
+    @media (min-width: $screen-lg) {
+      margin-bottom: 20px;
+    }
   }
 
   &__value,
@@ -146,7 +195,7 @@
     @media (min-width: $screen-sm) {
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      //justify-content: space-between;
       order: 1;
       width: 65%;
     }
@@ -199,6 +248,10 @@
   &__booking-link {
     text-align: center;
     visibility: visible;
+
+    @media (min-width: $screen-sm) {
+      margin-top: auto;
+    }
   }
 
   &__preview-link {
@@ -208,6 +261,7 @@
     @media (min-width: $screen-sm) {
       display: block;
       text-align: center;
+      margin-top: 25px;
     }
   }
 

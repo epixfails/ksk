@@ -2329,7 +2329,8 @@ pre {
                 flex-direction: column;
         -webkit-box-pack: justify;
             -ms-flex-pack: justify;
-                justify-content: space-between; } }
+                justify-content: space-between;
+        padding: 35px; } }
   .apart-info__object-link {
     margin-bottom: 1em; }
   .apart-info__object-link a {
@@ -2343,16 +2344,26 @@ pre {
         font-size: 30px; } }
   .apart-info__room-value {
     font-size: 14px;
-    font-weight: 700; }
+    font-weight: 700;
+    margin-bottom: 10px; }
     @media (min-width: 768px) {
       .apart-info__room-value {
-        font-size: 16px; } }
+        font-size: 16px;
+        margin-bottom: 15px; } }
     @media (min-width: 1200px) {
       .apart-info__room-value {
-        font-size: 26px; } }
+        font-size: 26px;
+        margin-bottom: 20px; } }
   .apart-info__object-status {
     text-transform: uppercase;
-    font-size: 16px; }
+    font-size: 16px;
+    margin-bottom: 10px; }
+    @media (min-width: 768px) {
+      .apart-info__object-status {
+        margin-bottom: 15px; } }
+    @media (min-width: 1200px) {
+      .apart-info__object-status {
+        margin-bottom: 20px; } }
   .apart-info__prop {
     text-transform: uppercase;
     font-size: 12px; }
@@ -2362,11 +2373,35 @@ pre {
     @media (min-width: 1200px) {
       .apart-info__prop {
         font-size: 18px; } }
+  .apart-info__square {
+    margin-bottom: 10px; }
+    @media (min-width: 768px) {
+      .apart-info__square {
+        margin-bottom: 15px; } }
+    @media (min-width: 1200px) {
+      .apart-info__square {
+        margin-bottom: 20px; } }
   .apart-info__square-value {
     display: inline-block;
     text-transform: lowercase;
     font-size: 26px;
     margin-left: 1em; }
+  .apart-info__decoration {
+    margin-bottom: 10px; }
+    @media (min-width: 768px) {
+      .apart-info__decoration {
+        margin-bottom: 15px; } }
+    @media (min-width: 1200px) {
+      .apart-info__decoration {
+        margin-bottom: 20px; } }
+  .apart-info__price {
+    margin-bottom: 10px; }
+    @media (min-width: 768px) {
+      .apart-info__price {
+        margin-bottom: 15px; } }
+    @media (min-width: 1200px) {
+      .apart-info__price {
+        margin-bottom: 20px; } }
   .apart-info__value, .apart-info__price-value {
     font-size: 24px;
     color: #ee7231; }
@@ -2416,9 +2451,6 @@ pre {
         -webkit-box-direction: normal;
             -ms-flex-direction: column;
                 flex-direction: column;
-        -webkit-box-pack: justify;
-            -ms-flex-pack: justify;
-                justify-content: space-between;
         -webkit-box-ordinal-group: 2;
             -ms-flex-order: 1;
                 order: 1;
@@ -2463,13 +2495,17 @@ pre {
   .apart-info__booking-link {
     text-align: center;
     visibility: visible; }
+    @media (min-width: 768px) {
+      .apart-info__booking-link {
+        margin-top: auto; } }
   .apart-info__preview-link {
     display: none;
     visibility: visible; }
     @media (min-width: 768px) {
       .apart-info__preview-link {
         display: block;
-        text-align: center; } }
+        text-align: center;
+        margin-top: 25px; } }
   .apart-info__preview-link a {
     color: #039577; }
 
