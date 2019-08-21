@@ -2799,7 +2799,7 @@ pre {
     width: 25%;
     height: 45px;
     padding: 0 10px; }
-  .obj-filter__rooms-count input[type="radio"] {
+  .obj-filter__rooms-count input[type="checkbox"] {
     display: none; }
   .obj-filter__rooms-count label {
     display: block;
@@ -2808,7 +2808,7 @@ pre {
     text-align: center;
     line-height: 45px;
     border: 1px solid #ffffff; }
-  .obj-filter input[type="radio"]:checked + label {
+  .obj-filter input[type="checkbox"]:checked + label {
     background-color: #ffffff;
     color: #039577; }
   .obj-filter__build-apartments-btn {

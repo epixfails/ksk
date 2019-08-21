@@ -162,7 +162,7 @@
     padding: 0 10px;
   }
 
-  &__rooms-count input[type="radio"] {
+  &__rooms-count input[type="checkbox"] {
     display: none;
   }
 
@@ -175,7 +175,7 @@
     border: 1px solid $text-color-white;
   }
 
-  input[type="radio"]:checked + label {
+  input[type="checkbox"]:checked + label {
     background-color: $text-color-white;
     color: $second-color;
   }
