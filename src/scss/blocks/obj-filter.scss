@@ -56,13 +56,25 @@
     right: 10px !important;
   }
 
-  &__complex-wrap .select2-selection__placeholder,
-  &__deadline-wrap .select2-selection__placeholder,
-  &__complex-wrap .select2-selection__rendered,
-  &__deadline-wrap .select2-selection__rendered,
-  &__rooms-sel-wrap .select2-selection__placeholder,
-  &__rooms-sel-wrap .select2-selection__rendered {
+  //&__complex-wrap .select2-search__field,
+  //&__deadline-wrap .select2-selection__placeholder,
+  //&__complex-wrap .select2-selection__rendered,
+  //&__deadline-wrap .select2-selection__rendered,
+  //&__rooms-sel-wrap .select2-selection__placeholder,
+  //&__rooms-sel-wrap .select2-selection__rendered {
+  //  color: $text-color-white !important;
+  //}
+
+  &__complex-wrap input[type="search"]::placeholder,
+  &__deadline-wrap input[type="search"]::placeholder,
+  &__rooms-sel-wrap input[type="search"]::placeholder {
     color: $text-color-white !important;
+  }
+
+  &__complex-wrap .select2-container--default.select2-container--focus .select2-selection--multiple,
+  &__deadline-wrap .select2-container--default.select2-container--focus .select2-selection--multiple,
+  &__rooms-sel-wrap .select2-container--default.select2-container--focus .select2-selection--multiple {
+    border: 1px solid $text-color-white;
   }
 
   &__complex-wrap .select2-selection__arrow b,

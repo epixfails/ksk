@@ -108,20 +108,22 @@ $( document ).ready(function() {
   $('.obj-filter__complex-select').select2({
     minimumResultsForSearch: Infinity,
     placeholder: "Все",
-    width: '270px'
+    width: '270px',
+    closeOnSelect: false
   });
 
   $('.obj-filter__deadline-select').select2({
     minimumResultsForSearch: Infinity,
     placeholder: "Все",
-    width: '100%'
+    width: '100%',
+    closeOnSelect: false
   });
 
   $('.obj-filter__rooms-sel-select').select2({
     minimumResultsForSearch: Infinity,
     placeholder: "Все",
-    width: '270px'
+    width: '270px',
+    closeOnSelect: false
   });
-
 
 });
