@@ -19,30 +19,28 @@ const ghpages = require('gh-pages');
 const path = require('path');
 const svgstore = require('gulp-svgstore');
 const svgmin = require('gulp-svgmin');
-const $ = require("jquery");
+const $ = require('jquery');
 
 function styles() {
   return src(`${dir.src}scss/style.scss`)
     .pipe(plumber())
     .pipe(sourcemaps.init())
     .pipe(sass())
-    .pipe(postcss([
-      autoprefixer({browsers: ['last 2 version'], grid: true}),
-    ]))
+    .pipe(postcss([autoprefixer({ browsers: ['last 2 version'], grid: true })]))
     .pipe(sourcemaps.write('/'))
     .pipe(dest(`${dir.build}css/`))
     .pipe(browserSync.stream());
 }
 exports.styles = styles;
 
-function copyHTML () {
+function copyHTML() {
   return src(`${dir.src}*.html`)
     .pipe(plumber())
     .pipe(dest(dir.build));
 }
 exports.copyHTML = copyHTML;
 
-function copyImg () {
+function copyImg() {
   return src(`${dir.src}img/**/*.{jpg,jpeg,png,gif,svg,webp}`)
     .pipe(plumber())
     .pipe(dest(`${dir.build}img/`));
@@ -51,62 +49,67 @@ exports.copyImg = copyImg;
 
 function buildSvgSprite() {
   return src(`${dir.src}svg-sprite/*.svg`)
-    .pipe(svgmin(function (file) {
-      return {
-        plugins: [{
-          cleanupIDs: { minify: true }
-        }]
-      }
-    }))
+    .pipe(
+      svgmin(function(file) {
+        return {
+          plugins: [
+            {
+              cleanupIDs: { minify: true },
+            },
+          ],
+        };
+      })
+    )
     .pipe(svgstore({ inlineSvg: true }))
     .pipe(rename('sprite.svg'))
     .pipe(dest(`${dir.build}img/`));
 }
 exports.buildSvgSprite = buildSvgSprite;
 
-function copyFonts () {
+function copyFonts() {
   return src(`${dir.src}fonts/*.{woff2,woff}`)
     .pipe(plumber())
     .pipe(dest(`${dir.build}fonts/`));
 }
 exports.copyFonts = copyFonts;
 
-function copyVendorsJs () {
+function copyVendorsJs() {
   return src([
-      './node_modules/picturefill/dist/picturefill.min.js',
-      './node_modules/svg4everybody/dist/svg4everybody.min.js',
-      './node_modules/jquery/dist/jquery.min.js',
-      './node_modules/slick-carousel/slick/slick.min.js',
-      './node_modules/select2/dist/js/select2.full.min.js',
-    ])
-    .pipe(dest(`${dir.build}js/`));
+    './node_modules/picturefill/dist/picturefill.min.js',
+    './node_modules/svg4everybody/dist/svg4everybody.min.js',
+    './node_modules/jquery/dist/jquery.min.js',
+    './node_modules/slick-carousel/slick/slick.min.js',
+    './node_modules/select2/dist/js/select2.full.min.js',
+  ]).pipe(dest(`${dir.build}js/`));
 }
 exports.copyVendorsJs = copyVendorsJs;
 
 function javascript() {
-  return src(`${dir.src}js/script.js`)
+  return src(`${dir.src}js/*.js`)
     .pipe(plumber())
-    .pipe(webpackStream({
-      mode: 'development',
-      output: {
-        filename: 'script.js',
-      },
-      module: {
-        rules: [
-          {
-            test: /\.(js)$/,
-            exclude: /(node_modules)/,
-            loader: 'babel-loader',
-            query: {
-              presets: ['@babel/preset-env']
-            }
-          }
-        ]
-      },
-      // externals: {
-      //   jquery: 'jQuery'
-      // }
-    }))
+    .pipe(
+      webpackStream({
+        mode: 'development',
+        output: {
+          filename: 'script.js',
+        },
+        module: {
+          rules: [
+            {
+              test: /\.(js)$/,
+              exclude: /(node_modules)/,
+              loader: 'babel-loader',
+              query: {
+                presets: ['@babel/preset-env'],
+              },
+            },
+          ],
+        },
+        // externals: {
+        //   jquery: 'jQuery'
+        // }
+      })
+    )
     .pipe(dest(`${dir.build}js`))
     .pipe(uglify())
     .pipe(rename({ suffix: '.min' }))
@@ -115,7 +118,7 @@ function javascript() {
 exports.javascript = javascript;
 
 function clean() {
-  return del(dir.build)
+  return del(dir.build);
 }
 exports.clean = clean;
 
@@ -133,17 +136,26 @@ function serve() {
   });
   watch(`${dir.src}scss/**/*.scss`, { delay: 100 }, styles);
   watch(`${dir.src}*.html`).on('change', series(copyHTML, browserSync.reload));
-  watch(`${dir.src}js/**/*.js`).on('change', series(javascript, browserSync.reload));
-  watch(`${dir.src}svg-sprite/*.svg`).on('change', series(
-    buildSvgSprite,
-    browserSync.reload
-  ));
+  watch(`${dir.src}js/**/*.js`).on(
+    'change',
+    series(javascript, browserSync.reload)
+  );
+  watch(`${dir.src}svg-sprite/*.svg`).on(
+    'change',
+    series(buildSvgSprite, browserSync.reload)
+  );
 }
-
-
 
 exports.default = series(
   clean,
-  parallel(styles, copyHTML, copyImg, buildSvgSprite, copyFonts, copyVendorsJs, javascript),
+  parallel(
+    styles,
+    copyHTML,
+    copyImg,
+    buildSvgSprite,
+    copyFonts,
+    copyVendorsJs,
+    javascript
+  ),
   serve
 );

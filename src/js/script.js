@@ -133,6 +133,23 @@ $(document).ready(function() {
     placeholder: 'Все',
     width: '270px',
     closeOnSelect: false,
+    data: [
+      {
+        obj: 'centr',
+        text: 'МКР Центральный',
+        id: 'c',
+      },
+      {
+        obj: 'chd',
+        text: 'ЖК Чудная Долина',
+        id: 'cd',
+      },
+      {
+        obj: 'saray',
+        text: 'ЖК Павловский',
+        id: 'p',
+      },
+    ],
   });
 
   $('.obj-filter__deadline-select').select2({
@@ -140,26 +157,26 @@ $(document).ready(function() {
     placeholder: 'Все',
     width: '100%',
     closeOnSelect: false,
-  });
-
-  $('.obj-filter__rooms-sel-select').select2({
-    minimumResultsForSearch: Infinity,
-    placeholder: 'Все',
-    width: '270px',
-    closeOnSelect: false,
+    data: [
+      {
+        date: '1q2019',
+        text: '1-й квартал 2019',
+        id: 1,
+      },
+      {
+        date: '2q2019',
+        text: '2-й квартал 2019',
+        id: 2,
+      },
+      {
+        date: '2q2020',
+        text: '2-й квартал 2020',
+        id: 3,
+      },
+    ],
   });
 
   // disable search
-
-  $('.obj-filter__rooms-sel-select').on(
-    'select2:opening select2:closing',
-    function(event) {
-      var $searchfield = $(this)
-        .parent()
-        .find('.select2-search__field');
-      $searchfield.prop('disabled', true);
-    }
-  );
 
   $('.obj-filter__deadline-select').on(
     'select2:opening select2:closing',

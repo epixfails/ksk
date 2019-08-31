@@ -118,8 +118,73 @@
           </ul>
         </div>
 
-        <div class="filter__wrapper">
-          Какую квартиру вы ищете?
+        <div class="wrapper">
+          <form class="obj-filter">
+            <div class="obj-filter__title">
+              <span>Какую квартиру вы ищете?</span>
+            </div>
+            <div class="obj-filter__wrap">
+              <div class="obj-filter__complex">
+                <div class="obj-filter__complex-title">Жилой комплекс</div>
+                <div class="obj-filter__complex-wrap">
+                  <select
+                    name="object"
+                    multiple="multiple"
+                    class="obj-filter__complex-select"
+                  >
+                  </select>
+                </div>
+              </div>
+              <div class="obj-filter__inner">
+                <div class="obj-filter__deadline">
+                  <div class="obj-filter__deadline-title">Срок сдачи</div>
+                  <div class="obj-filter__deadline-wrap">
+                    <select
+                      name="deadline"
+                      multiple="multiple"
+                      class="obj-filter__deadline-select"
+                    >
+                    </select>
+                  </div>
+                </div>
+                <div class="obj-filter__rooms">
+                  <div class="obj-filter__rooms-title">Количество комнат</div>
+                  <div class="obj-filter__rooms-wrap">
+                    <span class="obj-filter__rooms-count">
+                      <input id="rm0" name="rooms" type="checkbox" value="s" />
+                      <label for="rm0">C</label>
+                    </span>
+                    <span class="obj-filter__rooms-count">
+                      <input name="rooms" id="rm1" type="checkbox" value="1" />
+                      <label for="rm1">1</label>
+                    </span>
+                    <span class="obj-filter__rooms-count">
+                      <input name="rooms" id="rm2" type="checkbox" value="2" />
+                      <label for="rm2">2</label>
+                    </span>
+                    <span class="obj-filter__rooms-count">
+                      <input name="rooms" id="rm3" type="checkbox" value="3" />
+                      <label for="rm3">3</label>
+                    </span>
+                  </div>
+                </div>
+                <div class="obj-filter__build-apartments">
+                  <button class="obj-filter__build-apartments-btn">
+                    Готовые квартиры
+                  </button>
+                </div>
+              </div>
+
+              <div class="obj-filter__results">
+                <p class="obj-filter__results-text">
+                  Доступно <span>37</span> вариант(ов)
+                </p>
+                <button class="obj-filter__results-btn">
+                  Смотреть квартиры
+                </button>
+              </div>
+            </div>
+          </form>
         </div>
 
         <div class="object__list">
@@ -272,6 +337,7 @@
 
     <script src="./js/jquery.min.js"></script>
     <script src="./js/slick.min.js"></script>
+    <script src="./js/select2.full.min.js"></script>
     <script src="./js/script.js"></script>
   </body>
 </html>
