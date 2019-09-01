@@ -1,3 +1,5 @@
+import { filterEntity } from './filter';
+
 $(document).ready(function() {
   // БУРГЕР
   $('.main-nav__toggle').click(function(e) {
@@ -127,7 +129,6 @@ $(document).ready(function() {
     adaptiveHeight: true,
   });
 
-  //СЕЛЕКТ ФОРМЫ
   $('.obj-filter__complex-select').select2({
     minimumResultsForSearch: Infinity,
     placeholder: 'Все',
@@ -176,8 +177,6 @@ $(document).ready(function() {
     ],
   });
 
-  // disable search
-
   $('.obj-filter__deadline-select').on(
     'select2:opening select2:closing',
     function(event) {
@@ -197,4 +196,23 @@ $(document).ready(function() {
       $searchfield.prop('disabled', true);
     }
   );
+
+  const searchQuery = window.location.search;
+  const complex = window.location.search.split('=')[1];
+  if (complex) {
+    if (complex === 'pavlovsky') {
+      $('.obj-filter__complex-select').val(['p']);
+      $('.obj-filter__complex-select').trigger('change');
+    } else if (complex === 'centralny') {
+      $('.obj-filter__complex-select').val(['c']);
+      $('.obj-filter__complex-select').trigger('change');
+    } else if (complex === 'chdolina') {
+      $('.obj-filter__complex-select').val(['chd']);
+      $('.obj-filter__complex-select').trigger('change');
+    }
+  }
+
+  if (['pavlovsky', 'centralny', 'chdolina'].includes(complex)) {
+    filterEntity.renderFlatsList();
+  }
 });

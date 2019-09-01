@@ -49,6 +49,20 @@ class Filter {
     this[option] = value;
     const filteredArray = this.filterFlatsList();
     this.counterElement.innerHTML = filteredArray.length;
+
+    if (option === 'ready') {
+      this.complex = [];
+      this.rooms = [];
+      document
+        .querySelector('.obj-filter__rooms-wrap')
+        .querySelectorAll('input[type="checkbox"]')
+        .forEach(function(sel) {
+          sel.checked = false;
+        });
+    } else {
+      this.ready = false;
+      document.querySelector('.obj-filter__build-apartments-btn').style = '';
+    }
   }
 
   renderFlatsList() {
@@ -57,6 +71,13 @@ class Filter {
     const listPreparedForRender = this.filterFlatsList();
 
     for (let i = 0; i < listPreparedForRender.length; i++) {
+      const priceFormatted =
+        listPreparedForRender[i].priceFlat.slice(0, 1) +
+        ' ' +
+        listPreparedForRender[i].priceFlat.slice(1, 4) +
+        ' ' +
+        listPreparedForRender[i].priceFlat.slice(4);
+
       wrapper.innerHTML += `<div class="object-block__item product-card"><a href="${
         listPreparedForRender[i].link_flats
       }" class="product-card__link">
@@ -89,7 +110,7 @@ class Filter {
         </div>
         <div class="product-card__footer">
           <span
-            >${listPreparedForRender[i].priceFlat} &#8381;
+            >${priceFormatted} &#8381;
             <span class="product-card__arrow">стрелка</span>
           </span>
         </div>
@@ -103,7 +124,7 @@ class Filter {
     xhr.send();
 
     if (xhr.status != 200) {
-      alert(xhr.status + ': ' + xhr.statusText);
+      console.error(xhr.status + ': ' + xhr.statusText);
     } else {
       const flatsObj = this.parseJSONMessage(xhr.responseText);
       const { one, two, three, studio } = flatsObj;
@@ -128,12 +149,32 @@ class Filter {
         e.preventDefault();
         this.renderFlatsList();
       });
+
+    const readyFlatsButton = document.querySelector(
+      '.obj-filter__build-apartments-btn'
+    );
+
+    readyFlatsButton.addEventListener('click', e => {
+      e.preventDefault();
+      $('.obj-filter__complex-select').val([]);
+      $('.obj-filter__complex-select').trigger('change');
+
+      this.setFilterOption('ready', true);
+      readyFlatsButton.style.backgroundColor = 'rgba(255, 138, 0, 0.25)';
+      readyFlatsButton.style.borderColor = '#fff';
+      readyFlatsButton.style.color = '#fff';
+      this.renderFlatsList();
+    });
   }
 
   filterFlatsList() {
     const filteredArray = this.flatsList.filter(flat => {
       const isStudioAndStudiosSelected =
         this.rooms.includes('s') && flat.studio;
+      if (this.ready) {
+        return Number(flat.delivery) < 2018;
+      }
+
       if (this.rooms.length) {
         if (!this.rooms.includes(flat.roomsQuantity) && !flat.studio) {
           return false;
@@ -157,9 +198,9 @@ class Filter {
   }
 }
 
-if (window.location.pathname.includes('/objects')) {
-  const filterEntity = new Filter();
+export const filterEntity = new Filter();
 
+if (window.location.pathname.includes('/objects')) {
   filterEntity.fetchFlatsList();
 
   $('.obj-filter__complex-select').on('change', function(e) {

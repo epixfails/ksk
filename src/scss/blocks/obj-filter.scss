@@ -204,6 +204,8 @@
     border: 1px solid $second-color;
     background-color: $text-color-white;
     color: $second-color;
+    outline: none;
+    cursor: pointer;
   }
 
   &__results {
@@ -236,6 +238,8 @@
     min-height: 45px;
     font-size: 16px;
     border: none;
+    outline: none;
+    cursor: pointer;
 
     @media (min-width: $screen-lg) {
       width: 20%;
