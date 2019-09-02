@@ -520,23 +520,4 @@
     display: none;}
 }
 
-.select2-container:after {
-  content: '';
-  display: block;
-  position: absolute;
-  width: 15px;
-  height: 15px;
-  right: 20px;
-  top: 11px;
-  border-right: 1px solid $text-color-white;
-  border-bottom: 1px solid $text-color-white;
-  transform: rotate(45deg);
-  transition: all .5s;
-}
-
-.select2-container--open:after {
-  transform: rotate(225deg);
-  top: 17px;
-}
-
 

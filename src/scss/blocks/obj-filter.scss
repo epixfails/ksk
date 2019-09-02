@@ -49,12 +49,33 @@
     outline: none;
   }
 
-  &__complex-wrap .select2-selection__arrow,
-  &__deadline-wrap .select2-selection__arrow,
-  &__rooms-sel-wrap .select2-selection__arrow {
-    top: 9px !important;
-    right: 10px !important;
+  &__complex-wrap  .select2-container:after,
+  &__deadline-wrap .select2-container:after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    right: 20px;
+    top: 11px;
+    border-right: 1px solid $text-color-white;
+    border-bottom: 1px solid $text-color-white;
+    transform: rotate(45deg);
+    transition: all .5s;
   }
+
+  &__complex-wrap  .select2-container--open:after,
+  &__deadline-wrap .select2-container--open:after {
+    transform: rotate(225deg);
+    top: 17px;
+  }
+
+  //&__complex-wrap .select2-selection__arrow,
+  //&__deadline-wrap .select2-selection__arrow,
+  //&__rooms-sel-wrap .select2-selection__arrow {
+  //  top: 9px !important;
+  //  right: 10px !important;
+  //}
 
   .select2-container--default .select2-search--inline .select2-search__field {
     cursor: pointer;
