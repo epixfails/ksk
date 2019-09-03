@@ -129,6 +129,7 @@ class Filter {
       console.error(xhr.status + ': ' + xhr.statusText);
     } else {
       const flatsObj = this.parseJSONMessage(xhr.responseText);
+      console.log(flatsObj);
       const { one, two, three, studio } = flatsObj;
 
       this.flatsList = [
