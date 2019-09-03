@@ -203,7 +203,7 @@ class Filter {
 
 export const filterEntity = new Filter();
 
-if (window.location.pathname.includes('/objects')) {
+if (document.querySelector('.obj-filter__complex-select')) {
   filterEntity.fetchFlatsList();
 
   $('.obj-filter__complex-select').on('change', function(e) {
