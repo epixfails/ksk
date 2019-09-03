@@ -3,10 +3,12 @@ class Filter {
     this.complex = complex || [];
     this.finishDates = finishDates || [];
     this.rooms = rooms || [];
-    this.flatsList = {};
-    this.counterElement = document
-      .querySelector('.obj-filter__results-text')
-      .querySelector('span');
+    this.flatsList = [];
+    this.counterElement = document.querySelector('.obj-filter__results-text')
+      ? document
+          .querySelector('.obj-filter__results-text')
+          .querySelector('span')
+      : null;
   }
 
   defineComplexName(str) {
