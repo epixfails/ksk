@@ -1,0 +1,103 @@
+.social {
+  padding: 0 25px;
+
+  @media (min-width: $screen-lg) {
+    padding: 0 60px;
+  }
+
+  &__title h2{
+    font-size: 22px;
+    font-weight: 500;
+    text-align: center;
+
+    @media (min-width: $screen-lg) {
+      text-align: left;
+    }
+  }
+
+  &__descr,
+  &__spirit-descr-text,
+  &__spirit-block-text,
+  &__society-descr-text {
+    font-size: 15px;
+    margin-bottom: 30px;
+  }
+
+  &__spirit-title h3,
+  &__society-title h3 {
+    font-size: 20px;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 20px;
+
+    @media (min-width: $screen-lg) {
+      text-align: left;
+    }
+  }
+
+  &__spirit-descr-img,
+  &__society-descr-img {
+
+    @media (min-width: $screen-lg) {
+      display: flex;
+    }
+  }
+
+  &__spirit-descr-img img,
+  &__society-descr-img img {
+    margin: 0 auto;
+    margin-bottom: 15px;
+
+    @media (min-width: $screen-lg) {
+      margin: auto;
+    }
+  }
+
+  &__spirit-descr-title,
+  &__spirit-block-title,
+  &__society-descr-title {
+    font-size: 17px;
+    margin-bottom: 20px;
+    text-align: center;
+
+    @media (min-width: $screen-lg) {
+      text-align: left;
+    }
+  }
+
+  &__spirit-slider {
+    margin-bottom: 30px;
+  }
+
+  &__spirit-descr,
+  &__society-descr {
+
+    @media (min-width: $screen-lg) {
+      display: flex;
+    }
+  }
+
+  &__spirit-descr-img,
+  &__society-descr-img {
+
+    @media (min-width: $screen-lg) {
+      width: 25%;
+    }
+  }
+
+  &__spirit-descr-wrap,
+  &__society-descr-wrap {
+
+    @media (min-width: $screen-lg) {
+      width: 75%;
+      align-self: center;
+    }
+
+    &--align-left {
+
+      @media (min-width: $screen-lg) {
+        order: -1;
+      }
+    }
+  }
+}
