@@ -3003,4 +3003,142 @@ pre {
           -ms-flex-order: -1;
               order: -1; } }
 
+.about {
+  padding: 0 25px; }
+  .about__title {
+    font-size: 22px;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 30px; }
+  @media (min-width: 768px) {
+    .about__director {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      margin-bottom: 35px; } }
+  .about__director-img {
+    border: 10px solid #d9d9d9;
+    margin-bottom: 15px; }
+    @media (min-width: 768px) {
+      .about__director-img {
+        width: 30%;
+        border: 20px solid #d9d9d9; } }
+  @media (min-width: 768px) {
+    .about__director-wrap {
+      width: 70%;
+      padding-left: 50px; } }
+  @media (min-width: 1200px) {
+    .about__director-wrap {
+      padding: 0 100px; } }
+  .about__director-title {
+    font-size: 24px;
+    margin-bottom: 15px; }
+  .about__director-text {
+    font-size: 15px;
+    margin-bottom: 25px; }
+  .about__development-slider {
+    margin-bottom: 25px; }
+  .about__development-text {
+    font-size: 15px;
+    margin-bottom: 25px; }
+  @media (min-width: 768px) {
+    .about__development-wrap {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+      margin-left: -25px;
+      margin-right: -25px; } }
+  @media (min-width: 1200px) {
+    .about__development-wrap {
+      margin-left: -40px;
+      margin-right: -40px; } }
+  .about__development-item {
+    padding: 25px; }
+    @media (min-width: 768px) {
+      .about__development-item {
+        width: 50%; } }
+    @media (min-width: 1200px) {
+      .about__development-item {
+        padding: 40px; } }
+  @media (min-width: 1200px) {
+    .about__development-item img {
+      width: 100%; } }
+  .about__development-objects-link, .about__infrastructure-objects-link {
+    padding: 0 25px;
+    margin-bottom: 25px; }
+    @media (min-width: 768px) {
+      .about__development-objects-link, .about__infrastructure-objects-link {
+        padding: 0;
+        text-align: center; } }
+  .about__development-objects-link a,
+  .about__infrastructure-objects-link a {
+    width: 100%; }
+    @media (min-width: 768px) {
+      .about__development-objects-link a,
+      .about__infrastructure-objects-link a {
+        width: auto; } }
+  @media (min-width: 768px) {
+    .about__infrastructure-warranty {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex; } }
+  @media (min-width: 768px) {
+    .about__infrastructure-warranty-wrap {
+      width: 75%; } }
+  .about__infrastructure-warranty-title {
+    font-size: 22px;
+    margin-bottom: 25px; }
+  .about__infrastructure-warranty-text {
+    font-size: 15px;
+    margin-bottom: 25px; }
+  .about__infrastructure-warranty-img {
+    margin-bottom: 25px; }
+    @media (min-width: 768px) {
+      .about__infrastructure-warranty-img {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        width: 25%; } }
+  .about__infrastructure-warranty-img img {
+    margin: 0 auto; }
+    @media (min-width: 768px) {
+      .about__infrastructure-warranty-img img {
+        margin: auto; } }
+  .about__infrastructure-descr {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column; }
+  .about__infrastructure-slider {
+    margin-bottom: 25px; }
+  .about__infrastructure-title {
+    font-size: 22px;
+    margin-bottom: 20px;
+    -webkit-box-ordinal-group: -1;
+        -ms-flex-order: -2;
+            order: -2; }
+    @media (min-width: 768px) {
+      .about__infrastructure-title {
+        -webkit-box-ordinal-group: 1;
+            -ms-flex-order: 0;
+                order: 0; } }
+  .about__infrastructure-text {
+    font-size: 15px;
+    margin-bottom: 25px;
+    -webkit-box-ordinal-group: 0;
+        -ms-flex-order: -1;
+            order: -1; }
+    @media (min-width: 768px) {
+      .about__infrastructure-text {
+        -webkit-box-ordinal-group: 1;
+            -ms-flex-order: 0;
+                order: 0; } }
+  .about__infrastructure-list-header {
+    font-size: 15px; }
+
 /*# sourceMappingURL=style.css.map */
