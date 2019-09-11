@@ -2787,6 +2787,10 @@ pre {
   .obj-filter__deadline-wrap input[type='search']::-webkit-input-placeholder,
   .obj-filter__rooms-sel-wrap input[type='search']::-webkit-input-placeholder {
     color: #ffffff !important; }
+  .obj-filter__complex-wrap input[type='search']::-moz-placeholder,
+  .obj-filter__deadline-wrap input[type='search']::-moz-placeholder,
+  .obj-filter__rooms-sel-wrap input[type='search']::-moz-placeholder {
+    color: #ffffff !important; }
   .obj-filter__complex-wrap input[type='search']:-ms-input-placeholder,
   .obj-filter__deadline-wrap input[type='search']:-ms-input-placeholder,
   .obj-filter__rooms-sel-wrap input[type='search']:-ms-input-placeholder {
