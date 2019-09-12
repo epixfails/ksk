@@ -161,19 +161,20 @@ $(document).ready(function() {
       closeOnSelect: false,
       data: [
         {
-          date: '1q2019',
-          text: '1-й квартал 2019',
-          id: 1,
+          text: '2019 год',
+          id: 2019,
         },
         {
-          date: '2q2019',
-          text: '2-й квартал 2019',
-          id: 2,
+          text: '2020 год',
+          id: 2020,
         },
         {
-          date: '2q2020',
-          text: '2-й квартал 2020',
-          id: 3,
+          text: '2021 год',
+          id: 2021,
+        },
+        {
+          text: '2022 год',
+          id: 2022,
         },
       ],
     });

@@ -1381,6 +1381,9 @@ pre {
   padding: 0 25px;
   padding-bottom: 10px; }
 
+.product-card:last-child {
+  margin-right: auto; }
+
 .features {
   margin-top: 20px; }
   .features__wrap {
@@ -2263,6 +2266,15 @@ pre {
       -ms-flex-pack: justify;
           justify-content: space-between;
   padding: 20px 0; }
+  @media (max-width: 768px) {
+    .object__list {
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column; } }
   .object__list-item {
     width: 250px;
     display: block;
@@ -2746,11 +2758,11 @@ pre {
             flex-wrap: wrap; } }
   .obj-filter__complex, .obj-filter__inner, .obj-filter__rooms-sel, .obj-filter__results {
     padding: 10px 0; }
-  .obj-filter__complex-title, .obj-filter__deadline-title, .obj-filter__rooms-sel-title {
+  .obj-filter__complex-title, .obj-filter__deadline-title, .obj-filter__rooms-title {
     margin-left: 15px;
     margin-bottom: 10px; }
     @media (min-width: 1200px) {
-      .obj-filter__complex-title, .obj-filter__deadline-title, .obj-filter__rooms-sel-title {
+      .obj-filter__complex-title, .obj-filter__deadline-title, .obj-filter__rooms-title {
         margin-left: 0; } }
   .obj-filter__complex-wrap .select2-selection,
   .obj-filter__deadline-wrap .select2-selection,
@@ -2774,8 +2786,8 @@ pre {
     border-bottom: 1px solid #ffffff;
     -webkit-transform: rotate(45deg);
             transform: rotate(45deg);
-    -webkit-transition: all .5s;
-    transition: all .5s; }
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s; }
   .obj-filter__complex-wrap .select2-container--open:after,
   .obj-filter__deadline-wrap .select2-container--open:after {
     -webkit-transform: rotate(225deg);
@@ -2896,7 +2908,11 @@ pre {
     background-color: #ffffff;
     color: #039577;
     outline: none;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
     cursor: pointer; }
+    .obj-filter__build-apartments-btn:hover {
+      background-color: #ee7231; }
   .obj-filter__results {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -2931,10 +2947,14 @@ pre {
     font-size: 16px;
     border: none;
     outline: none;
-    cursor: pointer; }
+    cursor: pointer;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s; }
     @media (min-width: 1200px) {
       .obj-filter__results-btn {
         width: 20%; } }
+    .obj-filter__results-btn:hover {
+      background-color: #ee7231; }
 
 .select2-results__option {
   background: #039577;

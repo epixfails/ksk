@@ -4,6 +4,7 @@ class Filter {
     this.finishDates = finishDates || [];
     this.rooms = rooms || [];
     this.flatsList = [];
+    this.ready = false;
     this.counterElement = document.querySelector('.obj-filter__results-text')
       ? document
           .querySelector('.obj-filter__results-text')
@@ -146,21 +147,28 @@ class Filter {
   }
 
   addEventOnSubmit() {
+    const readyFlatsButton = document.querySelector(
+      '.obj-filter__build-apartments-btn'
+    );
+
     document
       .querySelector('.obj-filter__results-btn')
       .addEventListener('click', e => {
         e.preventDefault();
+        if (this.ready) {
+          this.setFilterOption('ready', false);
+          readyFlatsButton.style = '';
+        }
+
         this.renderFlatsList();
       });
-
-    const readyFlatsButton = document.querySelector(
-      '.obj-filter__build-apartments-btn'
-    );
 
     readyFlatsButton.addEventListener('click', e => {
       e.preventDefault();
       $('.obj-filter__complex-select').val([]);
       $('.obj-filter__complex-select').trigger('change');
+      $('.obj-filter__deadline-select').val([]);
+      $('.obj-filter__deadline-select').trigger('change');
 
       this.setFilterOption('ready', true);
       readyFlatsButton.style.backgroundColor = 'rgba(255, 138, 0, 0.25)';
@@ -172,6 +180,7 @@ class Filter {
 
   filterFlatsList() {
     const filteredArray = this.flatsList.filter(flat => {
+      console.log(flat);
       const isStudioAndStudiosSelected =
         this.rooms.includes('s') && flat.studio;
       if (this.ready) {
@@ -184,6 +193,12 @@ class Filter {
         }
 
         if (flat.studio && this.rooms.length && !this.rooms.includes('s')) {
+          return false;
+        }
+      }
+
+      if (this.finishDates.length) {
+        if (!this.finishDates.includes(flat.delivery)) {
           return false;
         }
       }
