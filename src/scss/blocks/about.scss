@@ -1,6 +1,10 @@
 .about {
   padding: 0 25px;
 
+  @media (min-width: $screen-lg) {
+    padding: 0 80px;
+  }
+
   &__title {
     font-size: 22px;
     font-weight: 500;
