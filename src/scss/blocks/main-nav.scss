@@ -88,14 +88,12 @@
   }
 
   &__sub-item {
-
     @media (min-width: $screen-lg) {
       padding: 7px 0;
     }
   }
 
   &__sub-link:hover {
-
     @media (min-width: $screen-lg) {
       color: $main-color;
     }
@@ -113,7 +111,6 @@
     }
 
     &--order-first {
-
       @media (min-width: $screen-lg) {
         order: -1;
       }
@@ -124,6 +121,7 @@
   &__sub-link {
     color: $text-color-white;
     text-decoration: none;
+    transition: all 0.3s;
 
     @media (min-width: $screen-lg) {
       font-size: 16px;
@@ -138,10 +136,13 @@
 
   &__link {
     position: relative;
+
+    &:hover {
+      color: #ee7231;
+    }
   }
 
   &__link--active {
-
     @media (min-width: $screen-lg) {
       color: $main-color;
     }
@@ -185,12 +186,10 @@
   }
 
   &__link--hidden {
-
     @media (min-width: $screen-lg) {
       display: block;
     }
   }
-
 
   &__toggle {
     position: relative;

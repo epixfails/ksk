@@ -13,14 +13,12 @@
   }
 
   &__header-pic {
-
     @media (min-width: $screen-lg) {
       width: 50%;
     }
   }
 
   &__descr {
-
     @media (min-width: $screen-lg) {
       width: 50%;
       display: flex;
@@ -100,6 +98,8 @@
 
     &--active span:after {
       transform: rotate(225deg);
+      position: relative;
+      top: 8px;
     }
   }
 
