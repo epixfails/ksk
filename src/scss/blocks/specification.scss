@@ -36,12 +36,12 @@
       padding: 15px 70px;
     }
 
-    & span {
+    & div {
       visibility: visible;
     }
   }
 
-  &__pictures span {
+  &__pictures div {
     display: block;
     margin: 15px 0;
     color: $main-color;

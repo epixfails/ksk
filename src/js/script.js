@@ -123,6 +123,12 @@ $(document).ready(function() {
     adaptiveHeight: true,
   });
 
+  let slider = $('.pictures-slider');
+  $('.specification__counts').text( slider.slick("getSlick").slideCount);
+  $(".pictures-slider").on('afterChange', function(event, slick, currentSlide){
+    $(".specification__current-count").text(currentSlide + 1);
+  });
+
   // СЛАЙДЕР ПЛАНИРОВОК
   $('.plans-slider').slick({
     slidesToShow: 1,
