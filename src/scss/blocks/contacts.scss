@@ -1,0 +1,47 @@
+.contacts {
+  &-wrapper {
+    border: 1px #ee7231 solid;
+    padding: 30px 60px;
+    margin-bottom: 40px;
+  }
+
+  &-list {
+    width: 380px;
+  }
+
+  &-column {
+    display: flex;
+
+    &__title {
+      font-weight: 700;
+    }
+
+    &__list {
+      padding-left: 20px;
+      list-style-type: none;
+      margin: 0;
+    }
+  }
+
+  &__title {
+    font-weight: 700;
+  }
+
+  &-section {
+    margin-top: 30px;
+
+    &__title {
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    &__text {
+      margin-bottom: 10px;
+    }
+
+    &__link {
+      color: #ee7231;
+      text-decoration: underline;
+    }
+  }
+}

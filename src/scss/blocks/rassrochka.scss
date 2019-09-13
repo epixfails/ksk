@@ -1,0 +1,13 @@
+.rassrochka {
+  font-weight: 400;
+  font-size: 22px;
+  margin-top: 0;
+
+  &:first-child {
+    margin-top: 10px;
+  }
+}
+
+.rassrochka-container {
+  padding: 0 10px 40px 10px;
+}
