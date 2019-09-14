@@ -2990,17 +2990,11 @@ pre {
         text-align: left; } }
   @media (min-width: 1200px) {
     .social__spirit-descr-img, .social__society-descr-img {
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex; } }
+      text-align: center; } }
   .social__spirit-descr-img img,
   .social__society-descr-img img {
-    margin: 0 auto;
-    margin-bottom: 15px; }
-    @media (min-width: 1200px) {
-      .social__spirit-descr-img img,
-      .social__society-descr-img img {
-        margin: auto; } }
+    margin-bottom: 15px;
+    text-align: center; }
   .social__spirit-descr-title, .social__spirit-block-title, .social__society-descr-title {
     font-size: 17px;
     margin-bottom: 20px;
