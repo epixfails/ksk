@@ -124,9 +124,9 @@ $(document).ready(function() {
   });
 
   let slider = $('.pictures-slider');
-  $('.specification__counts').text( slider.slick("getSlick").slideCount);
-  $(".pictures-slider").on('afterChange', function(event, slick, currentSlide){
-    $(".specification__current-count").text(currentSlide + 1);
+  $('.specification__counts').text(slider.slick('getSlick').slideCount);
+  $('.pictures-slider').on('afterChange', function(event, slick, currentSlide) {
+    $('.specification__current-count').text(currentSlide + 1);
   });
 
   // СЛАЙДЕР ПЛАНИРОВОК
@@ -223,5 +223,33 @@ $(document).ready(function() {
 
   if (['pavlovsky', 'centralny', 'chdolina'].includes(complex)) {
     filterEntity.renderFlatsList();
+  }
+
+  const linkShaumyana = document.getElementById('linkSh');
+  const linkKoltushi = document.getElementById('linkKoltushi');
+
+  if (linkShaumyana && linkKoltushi) {
+    const mapWrapper = document.querySelector('.contacts-map');
+    linkShaumyana.addEventListener('click', function(e) {
+      e.preventDefault();
+      mapWrapper.innerHTML = '';
+      const newScript = document.createElement('script');
+      newScript.setAttribute(
+        'src',
+        'http://api-maps.yandex.ru/services/constructor/1.0/js/?sid=c78mFLUWc5iUcRZkOF8tx_pebi4uUfEX&amp;width=600&amp;height=450'
+      );
+      mapWrapper.appendChild(newScript);
+    });
+
+    linkKoltushi.addEventListener('click', function(e) {
+      e.preventDefault();
+      mapWrapper.innerHTML = '';
+      const newScript = document.createElement('script');
+      newScript.setAttribute(
+        'src',
+        'http://api-maps.yandex.ru/services/constructor/1.0/js/?sid=jNIMSSaft1IBOkd8f3K2eeumIur6-QJG&amp;width=600&amp;height=450'
+      );
+      mapWrapper.appendChild(newScript);
+    });
   }
 });
