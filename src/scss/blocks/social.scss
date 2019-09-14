@@ -39,19 +39,17 @@
   &__society-descr-img {
 
     @media (min-width: $screen-lg) {
-      //display: flex;
-      text-align: center;
+      display: flex;
     }
   }
 
   &__spirit-descr-img img,
   &__society-descr-img img {
-    //margin: 0 auto;
+    margin: 0 auto;
     margin-bottom: 15px;
-    text-align: center;
 
     @media (min-width: $screen-lg) {
-      //margin: auto;
+      margin: auto;
     }
   }
 
