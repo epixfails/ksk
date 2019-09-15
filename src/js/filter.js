@@ -143,6 +143,10 @@ class Filter {
       this.counterElement.innerHTML = this.flatsList.length;
 
       this.addEventOnSubmit();
+
+      if (window.location.pathname.includes('poisk-kvartir')) {
+        this.renderFlatsList();
+      }
     }
   }
 
@@ -180,7 +184,6 @@ class Filter {
 
   filterFlatsList() {
     const filteredArray = this.flatsList.filter(flat => {
-      console.log(flat);
       const isStudioAndStudiosSelected =
         this.rooms.includes('s') && flat.studio;
       if (this.ready) {

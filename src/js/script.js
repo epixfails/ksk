@@ -126,7 +126,8 @@ $(document).ready(function() {
   let slider = $('.pictures-slider');
   $('.specification__counts').text(slider.slick('getSlick').slideCount);
   $('.pictures-slider').on('afterChange', function(event, slick, currentSlide) {
-    $('.specification__current-count').text(currentSlide + 1);
+    this.parentNode.querySelector('.specification__current-count').textContent =
+      currentSlide + 1;
   });
 
   // СЛАЙДЕР ПЛАНИРОВОК
