@@ -20,6 +20,10 @@ class Filter {
       return 'ЖК Павловский';
     }
 
+    if (str === 'premier') {
+      return 'ЖК Премьер';
+    }
+
     return 'МКР Центральный';
   }
 

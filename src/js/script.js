@@ -126,8 +126,12 @@ $(document).ready(function() {
   let slider = $('.pictures-slider');
   $('.specification__counts').text(slider.slick('getSlick').slideCount);
   $('.pictures-slider').on('afterChange', function(event, slick, currentSlide) {
-    this.parentNode.querySelector('.specification__current-count').textContent =
-      currentSlide + 1;
+    const spanBlock = this.parentNode.querySelector(
+      '.specification__current-count'
+    );
+    if (spanBlock) {
+      spanBlock.textContent = currentSlide + 1;
+    }
   });
 
   // СЛАЙДЕР ПЛАНИРОВОК
@@ -157,6 +161,11 @@ $(document).ready(function() {
           obj: 'saray',
           text: 'ЖК Павловский',
           id: 'p',
+        },
+        {
+          obj: 'premier',
+          text: 'ЖК Премьер',
+          id: 'premier',
         },
       ],
     });
@@ -218,6 +227,9 @@ $(document).ready(function() {
       $('.obj-filter__complex-select').trigger('change');
     } else if (complex === 'chdolina') {
       $('.obj-filter__complex-select').val(['chd']);
+      $('.obj-filter__complex-select').trigger('change');
+    } else if (complex === 'premier') {
+      $('.obj-filter__complex-select').val(['premier']);
       $('.obj-filter__complex-select').trigger('change');
     }
   }
