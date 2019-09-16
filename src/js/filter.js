@@ -87,7 +87,7 @@ class Filter {
 
       wrapper.innerHTML += `<div class="object-block__item product-card"><a href="${
         listPreparedForRender[i].link_flats
-      }" class="product-card__link">
+      }" target="_blank" class="product-card__link">
         <div class="product-card__img product-card__img--frame">
           <img
             src="${listPreparedForRender[i].imgLink}"
