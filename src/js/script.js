@@ -234,7 +234,7 @@ $(document).ready(function() {
     }
   }
 
-  if (['pavlovsky', 'centralny', 'chdolina'].includes(complex)) {
+  if (['pavlovsky', 'centralny', 'verhniy'].includes(complex)) {
     filterEntity.renderFlatsList();
   }
 
