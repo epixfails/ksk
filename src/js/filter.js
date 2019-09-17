@@ -14,7 +14,7 @@ class Filter {
 
   defineComplexName(str) {
     if (str === 'cd') {
-      return 'ЖК Чудная Долина';
+      return 'ЖК Верхний';
     }
     if (str === 'p') {
       return 'ЖК Павловский';

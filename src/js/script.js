@@ -154,7 +154,7 @@ $(document).ready(function() {
         },
         {
           obj: 'chd',
-          text: 'ЖК Чудная Долина',
+          text: 'ЖК Верхний',
           id: 'cd',
         },
         {
@@ -225,7 +225,7 @@ $(document).ready(function() {
     } else if (complex === 'centralny') {
       $('.obj-filter__complex-select').val(['c']);
       $('.obj-filter__complex-select').trigger('change');
-    } else if (complex === 'chdolina') {
+    } else if (complex === 'verhniy') {
       $('.obj-filter__complex-select').val(['cd']);
       $('.obj-filter__complex-select').trigger('change');
     } else if (complex === 'premier') {
