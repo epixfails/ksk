@@ -118,13 +118,21 @@ $(document).ready(function() {
   });
 
   // СЛАЙДЕР ОБЩИЙ ВИД
+
+  $('.pictures-slider').on('init', function(event, slick) {
+    const spanBlock = this.parentNode.querySelector('.specification__counts');
+    if (spanBlock) {
+      spanBlock.textContent = slick.slideCount;
+    }
+  });
+
   $('.pictures-slider').slick({
     slidesToShow: 1,
     adaptiveHeight: true,
   });
 
   let slider = $('.pictures-slider');
-  $('.specification__counts').text(slider.slick('getSlick').slideCount);
+
   $('.pictures-slider').on('afterChange', function(event, slick, currentSlide) {
     const spanBlock = this.parentNode.querySelector(
       '.specification__current-count'
