@@ -229,7 +229,7 @@ $(document).ready(function() {
       $('.obj-filter__complex-select').val(['cd']);
       $('.obj-filter__complex-select').trigger('change');
     } else if (complex === 'premier') {
-      $('.obj-filter__complex-select').val(['premier']);
+      $('.obj-filter__complex-select').val(['pr']);
       $('.obj-filter__complex-select').trigger('change');
     }
   }
