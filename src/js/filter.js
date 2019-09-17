@@ -20,7 +20,7 @@ class Filter {
       return 'ЖК Павловский';
     }
 
-    if (str === 'premier') {
+    if (str === 'pr') {
       return 'ЖК Премьер';
     }
 

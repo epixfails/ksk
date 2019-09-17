@@ -165,7 +165,7 @@ $(document).ready(function() {
         {
           obj: 'premier',
           text: 'ЖК Премьер',
-          id: 'premier',
+          id: 'pr',
         },
       ],
     });
