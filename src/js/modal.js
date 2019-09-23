@@ -28,10 +28,17 @@ $(document).ready(function() {
       return;
     }
 
+    const _token = $('input#_token').val();
+    const dataToSend = new FormData();
+    dataToSend.append('phone', phoneValue);
+
     $.ajax({
       url: 'feedback',
       method: 'POST',
-      data: JSON.stringify({ phone: phoneValue }),
+      data: JSON.stringify({ phone: phoneValue, _token }),
+      beforeSend: function(xhr, type) {
+        xhr.setRequestHeader('X-CSRF-Token', _token);
+      },
       success: function() {
         document.querySelector('.modal-success').style.display = 'block';
         document.querySelector('.modal').style.display = 'none';
