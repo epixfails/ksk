@@ -1,55 +1,52 @@
 .objects {
+  &__title-wrap {
+    padding: 15px;
+  }
 
-	&__title-wrap {
-		padding: 15px;
-	}
+  &__title {
+    font-size: 34px;
+    font-weight: 500;
+    margin-top: 20px;
 
-	&__title {
-		font-size: 34px;
-		font-weight: 500;
-		margin-top: 20px;
-
-		@media (min-width: $screen-lg) {
+    @media (min-width: $screen-lg) {
       font-size: 30px;
-			padding: 0 55px;
-		}
-	}
+      padding: 0 55px;
+    }
+  }
 
-	&__title span {
-		display: block;
-    
+  &__title span {
+    display: block;
+
     @media (min-width: $screen-sm) {
       display: inline-block;
     }
-	}
+  }
 
-	&__slider .slick-arrow {
-		display: none;
-		position: absolute;
-		font-size: 0;
-		border: none;
-		outline: none;
-		background-color: transparent;
-		cursor: pointer;
+  &__slider .slick-arrow {
+    display: none;
+    position: absolute;
+    font-size: 0;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    cursor: pointer;
   }
 
   &__slider .slick-next {
-	
-	@media (min-width: $screen-sm) {
-		right: 10px;
-    top: 0;
-    bottom: 0;
-    width: 70px;
-    height: 100%;
-    background-image: url(../img/card-mini/arrow-Next.png);
-    background-repeat: no-repeat;
-    background-size: 70px 70px;
-    background-position-y: center;
-	}
+    @media (min-width: $screen-sm) {
+      right: 10px;
+      top: 0;
+      bottom: 0;
+      width: 70px;
+      height: 100%;
+      background-image: url(../img/card-mini/arrow-Next.png);
+      background-repeat: no-repeat;
+      background-size: 70px 70px;
+      background-position-y: center;
+    }
   }
-  
-  &__slider .slick-list {
 
+  &__slider .slick-list {
     @media (min-width: $screen-sm) {
       margin: 0 80px 0 20px;
     }
@@ -59,17 +56,17 @@
     }
   }
 
-	&__slide-item {
-		padding: 8px;
-		transform: scale(0.8);
-		transition: all 0.4s ease;
+  &__slide-item {
+    padding: 8px;
+    transform: scale(0.8);
+    transition: all 0.4s ease;
 
-		@media (min-width: $screen-sm) {
-			transform: scale(1);
-		}
-	}
+    @media (min-width: $screen-sm) {
+      transform: scale(1);
+    }
+  }
 
-	&__slide-item.slick-active {
-		transform: scale(1);
-	}
+  &__slide-item.slick-active {
+    transform: scale(1);
+  }
 }

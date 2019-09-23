@@ -93,7 +93,7 @@ $(document).ready(function() {
 
   // СЛАЙДЕР ОБЪЕКТОВ
   $('.objects__slider').slick({
-    infinite: true,
+    infinite: false,
     slidesToShow: 4,
     responsive: [
       {

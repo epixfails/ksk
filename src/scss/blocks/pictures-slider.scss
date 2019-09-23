@@ -18,12 +18,14 @@
 
   & .slick-prev {
     left: 20px;
+    cursor: pointer;
     bottom: -35px;
     transform: rotate(45deg);
   }
 
   & .slick-next {
     right: 20px;
+    cursor: pointer;
     bottom: -35px;
     transform: rotate(225deg);
   }

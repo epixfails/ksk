@@ -4,6 +4,10 @@
     text-decoration: none;
     border: 1px solid rgba(0, 0, 0, 0.05);
     box-shadow: 0px 4px 8px rgb(217, 217, 217);
+
+    &:hover {
+      box-shadow: 0px 4px 8px rgb(217, 217, 217);
+    }
   }
 
   &__img {

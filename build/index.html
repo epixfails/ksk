@@ -436,6 +436,50 @@
           </div>
         </section>
       </div>
+
+      <div class="open-modal">
+        <img src="./img/ordercall.png" alt="Заказать звонок" />
+      </div>
+
+      <div class="modal">
+        <div class="modal-header">
+          <p class="modal-header__title">Отдел продаж</p>
+          <div class="modal-header__close">
+            <span class="modal-header__close-icon"></span>
+          </div>
+        </div>
+        <div class="modal-content">
+          <p class="modal-content__text">
+            Интересуетесь выгодным приобретением нового жилья? Перезвоним вам и
+            проконсультируем вас по поводу этой квартиры!
+          </p>
+          <form action="" class="modal-content__form">
+            <input
+              type="text"
+              id="modal-phone"
+              name="phone"
+              class="modal-content__form-input"
+              placeholder="Введите телефон"
+            />
+            <span class="modal-content__error"></span>
+            <button class="modal-content__form-submit offer-link" type="submit">
+              Жду звонка!
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <div class="modal-success">
+        <div class="modal-header">
+          <p class="modal-header__title">Отправка формы</p>
+        </div>
+        <div class="modal-content">
+          <p class="modal-content__text">
+            <img src="./img/ok.png" alt="" />
+            Наш менеджер по продажам скоро перезвонит вам!
+          </p>
+        </div>
+      </div>
     </main>
     <div class="footer-container">
       <footer class="page-footer">
@@ -537,5 +581,7 @@
         </div>
       </footer>
     </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
   </body>
 </html>
