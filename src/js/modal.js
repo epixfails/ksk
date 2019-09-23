@@ -29,7 +29,7 @@ $(document).ready(function() {
     }
 
     $.ajax({
-      url: 'http://ksk21.webconcept21.ru/feedback',
+      url: 'feedback',
       method: 'POST',
       data: JSON.stringify({ phone: phoneValue }),
       success: function() {
