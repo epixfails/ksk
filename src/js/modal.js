@@ -30,13 +30,10 @@ $(document).ready(function() {
 
     const _token = $("input[name='_token']").val();
 
-    const dataToSend = new FormData();
-    dataToSend.append('phone', phoneValue);
-
     $.ajax({
       url: 'feedback',
       method: 'POST',
-      data: JSON.stringify({ phone: phoneValue, _token }),
+      data: $('#modal-form').serialize(),
       beforeSend: function(xhr, type) {
         xhr.setRequestHeader('X-CSRF-Token', _token);
       },
