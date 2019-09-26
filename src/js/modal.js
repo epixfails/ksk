@@ -1,11 +1,22 @@
 $(document).ready(function() {
   const openModalBlock = document.querySelector('.open-modal');
+  const openModalOnOrderFlat = document.querySelector('.js-order-flat');
   const modalContentError = document.querySelector('.modal-content__error');
 
-  openModalBlock.addEventListener('click', function() {
-    modalContentError.textContent = '';
-    document.querySelector('.modal').style.display = 'block';
-  });
+  if (openModalOnOrderFlat) {
+    openModalOnOrderFlat.addEventListener('click', function(e) {
+      e.preventDefault();
+      modalContentError.textContent = '';
+      document.querySelector('.modal').style.display = 'block';
+    });
+  }
+
+  if (openModalBlock) {
+    openModalBlock.addEventListener('click', function() {
+      modalContentError.textContent = '';
+      document.querySelector('.modal').style.display = 'block';
+    });
+  }
 
   const closeModalBlock = document.querySelector('.modal-header__close');
 
