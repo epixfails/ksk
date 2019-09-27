@@ -14,10 +14,12 @@ class Filter {
       : null;
 
     const loadMoreButton = document.querySelector('.load-more');
-    loadMoreButton.addEventListener('click', e => {
-      e.preventDefault();
-      this.renderFlatsList(true);
-    });
+    if (loadMoreButton) {
+      loadMoreButton.addEventListener('click', e => {
+        e.preventDefault();
+        this.renderFlatsList(true);
+      });
+    }
   }
 
   defineComplexName(str) {
