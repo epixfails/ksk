@@ -204,6 +204,8 @@ class Filter {
       $('.obj-filter__deadline-select').trigger('change');
 
       this.setFilterOption('ready', true);
+      this.startFlatCounterRender = 0;
+      this.currentPagination = 9;
       readyFlatsButton.style.backgroundColor = 'rgba(255, 138, 0, 0.25)';
       readyFlatsButton.style.borderColor = '#fff';
       readyFlatsButton.style.color = '#fff';
