@@ -3,6 +3,8 @@ $(document).ready(function() {
   const openModalOnOrderFlat = document.querySelector('.js-order-flat');
   const modalContentError = document.querySelector('.modal-content__error');
 
+  if (!openModalBlock) return;
+
   if (openModalOnOrderFlat) {
     openModalOnOrderFlat.addEventListener('click', function(e) {
       e.preventDefault();

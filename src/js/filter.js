@@ -173,7 +173,9 @@ class Filter {
 
       this.addEventOnSubmit();
 
-      if (window.location.pathname.includes('poisk-kvartir')) {
+      const complex = window.location.search.split('=')[1];
+
+      if (window.location.pathname.includes('poisk-kvartir') && !complex) {
         this.renderFlatsList();
       }
     }
