@@ -254,31 +254,33 @@ class Filter {
 
 export const filterEntity = new Filter();
 
-const loadMoreButton = document.querySelector('.load-more');
+$(document).ready(function() {
+  if (document.querySelector('.obj-filter__complex-select')) {
+    filterEntity.fetchFlatsList();
 
-if (document.querySelector('.obj-filter__complex-select')) {
-  filterEntity.fetchFlatsList();
-
-  $('.obj-filter__complex-select').on('change', function(e) {
-    filterEntity.setFilterOption('complex', $(e.target).select2('val'));
-  });
-
-  $('.obj-filter__deadline-select').on('change', function(e) {
-    filterEntity.setFilterOption('finishDates', $(e.target).select2('val'));
-  });
-
-  const roomsForm = document.querySelector('.obj-filter__rooms-wrap');
-
-  const roomsCheckboxes = roomsForm.querySelectorAll('input[type="checkbox"]');
-
-  roomsCheckboxes.forEach(function(sel) {
-    sel.addEventListener('change', function(e) {
-      const newRoomsSelection = [];
-      roomsCheckboxes.forEach(function(check) {
-        if (check.checked) newRoomsSelection.push(check.value);
-      });
-
-      filterEntity.setFilterOption('rooms', newRoomsSelection);
+    $('.obj-filter__complex-select').on('change', function(e) {
+      filterEntity.setFilterOption('complex', $(e.target).select2('val'));
     });
-  });
-}
+
+    $('.obj-filter__deadline-select').on('change', function(e) {
+      filterEntity.setFilterOption('finishDates', $(e.target).select2('val'));
+    });
+
+    const roomsForm = document.querySelector('.obj-filter__rooms-wrap');
+
+    const roomsCheckboxes = roomsForm.querySelectorAll(
+      'input[type="checkbox"]'
+    );
+
+    roomsCheckboxes.forEach(function(sel) {
+      sel.addEventListener('change', function(e) {
+        const newRoomsSelection = [];
+        roomsCheckboxes.forEach(function(check) {
+          if (check.checked) newRoomsSelection.push(check.value);
+        });
+
+        filterEntity.setFilterOption('rooms', newRoomsSelection);
+      });
+    });
+  }
+});
