@@ -5,11 +5,19 @@ class Filter {
     this.rooms = rooms || [];
     this.flatsList = [];
     this.ready = false;
+    this.startFlatCounterRender = 0;
+    this.currentPagination = 9;
     this.counterElement = document.querySelector('.obj-filter__results-text')
       ? document
           .querySelector('.obj-filter__results-text')
           .querySelector('span')
       : null;
+
+    const loadMoreButton = document.querySelector('.load-more');
+    loadMoreButton.addEventListener('click', e => {
+      e.preventDefault();
+      this.renderFlatsList(true);
+    });
   }
 
   defineComplexName(str) {
@@ -72,22 +80,25 @@ class Filter {
     }
   }
 
-  renderFlatsList() {
+  renderFlatsList(noclear) {
     const wrapper = document.querySelector('.object__list');
-    wrapper.innerHTML = '';
+    if (!noclear) {
+      wrapper.innerHTML = '';
+    }
     const listPreparedForRender = this.filterFlatsList();
 
-    for (let i = 0; i < listPreparedForRender.length; i++) {
-      const priceFormatted =
-        listPreparedForRender[i].priceFlat.slice(0, 1) +
-        ' ' +
-        listPreparedForRender[i].priceFlat.slice(1, 4) +
-        ' ' +
-        listPreparedForRender[i].priceFlat.slice(4);
+    for (let i = this.startFlatCounterRender; i < this.currentPagination; i++) {
+      if (listPreparedForRender[i]) {
+        const priceFormatted =
+          listPreparedForRender[i].priceFlat.slice(0, 1) +
+          ' ' +
+          listPreparedForRender[i].priceFlat.slice(1, 4) +
+          ' ' +
+          listPreparedForRender[i].priceFlat.slice(4);
 
-      wrapper.innerHTML += `<div class="object-block__item product-card"><a href="${
-        listPreparedForRender[i].link_flats
-      }" target="_blank" class="product-card__link">
+        wrapper.innerHTML += `<div class="object-block__item product-card"><a href="${
+          listPreparedForRender[i].link_flats
+        }" target="_blank" class="product-card__link">
         <div class="product-card__img product-card__img--frame">
           <img
             src="${listPreparedForRender[i].imgLink}"
@@ -122,6 +133,18 @@ class Filter {
           </span>
         </div>
       </a></div>`;
+      }
+    }
+
+    const loadMoreButton = document.querySelector('.load-more');
+
+    if (listPreparedForRender.length - this.currentPagination > 0) {
+      this.startFlatCounterRender = this.currentPagination;
+      this.currentPagination = this.currentPagination + 9;
+
+      loadMoreButton.style.display = 'block';
+    } else {
+      loadMoreButton.style.display = 'none';
     }
   }
 
@@ -163,6 +186,8 @@ class Filter {
       .querySelector('.obj-filter__results-btn')
       .addEventListener('click', e => {
         e.preventDefault();
+        this.startFlatCounterRender = 0;
+        this.currentPagination = 9;
         if (this.ready) {
           this.setFilterOption('ready', false);
           readyFlatsButton.style = '';
@@ -224,6 +249,8 @@ class Filter {
 }
 
 export const filterEntity = new Filter();
+
+const loadMoreButton = document.querySelector('.load-more');
 
 if (document.querySelector('.obj-filter__complex-select')) {
   filterEntity.fetchFlatsList();
