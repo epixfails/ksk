@@ -152,6 +152,11 @@
     padding: 0 10px;
   }
 
+  &__build-apartments {
+    display: flex;
+    margin: 0;
+  }
+
   &__deadline {
     @media (min-width: $screen-lg) {
       width: 35%;
@@ -168,7 +173,7 @@
     @media (min-width: $screen-lg) {
       width: 30%;
       padding-right: 0;
-      padding-left: 30px;
+      padding-left: 20px;
     }
   }
 
@@ -214,6 +219,12 @@
 
     &:hover {
       cursor: pointer;
+    }
+
+    &__ready label {
+      &:hover {
+        cursor: pointer;
+      }
     }
   }
 
@@ -279,6 +290,11 @@
     &:hover {
       background-color: #ee7231;
     }
+  }
+
+  &__ready label {
+    width: 244px;
+    font-size: 20px;
   }
 }
 

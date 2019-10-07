@@ -64,22 +64,23 @@ class Filter {
 
   setFilterOption(option, value) {
     this[option] = value;
+    console.log(option, value);
     const filteredArray = this.filterFlatsList();
     this.counterElement.innerHTML = filteredArray.length;
 
-    if (option === 'ready') {
-      this.complex = [];
-      this.rooms = [];
-      document
-        .querySelector('.obj-filter__rooms-wrap')
-        .querySelectorAll('input[type="checkbox"]')
-        .forEach(function(sel) {
-          sel.checked = false;
-        });
-    } else {
-      this.ready = false;
-      document.querySelector('.obj-filter__build-apartments-btn').style = '';
-    }
+    // if (option === 'ready') {
+    //   this.complex = [];
+    //   this.rooms = [];
+    //   document
+    //     .querySelector('.obj-filter__rooms-wrap')
+    //     .querySelectorAll('input[type="checkbox"]')
+    //     .forEach(function(sel) {
+    //       sel.checked = false;
+    //     });
+    // } else {
+    //   this.ready = false;
+    //   document.querySelector('.obj-filter__build-apartments-btn').style = '';
+    // }
   }
 
   renderFlatsList(noclear) {
@@ -182,9 +183,9 @@ class Filter {
   }
 
   addEventOnSubmit() {
-    const readyFlatsButton = document.querySelector(
-      '.obj-filter__build-apartments-btn'
-    );
+    // const readyFlatsButton = document.querySelector(
+    //   '.obj-filter__build-apartments-btn'
+    // );
 
     document
       .querySelector('.obj-filter__results-btn')
@@ -192,29 +193,25 @@ class Filter {
         e.preventDefault();
         this.startFlatCounterRender = 0;
         this.currentPagination = 9;
-        if (this.ready) {
-          this.setFilterOption('ready', false);
-          readyFlatsButton.style = '';
-        }
 
         this.renderFlatsList();
       });
 
-    readyFlatsButton.addEventListener('click', e => {
-      e.preventDefault();
-      $('.obj-filter__complex-select').val([]);
-      $('.obj-filter__complex-select').trigger('change');
-      $('.obj-filter__deadline-select').val([]);
-      $('.obj-filter__deadline-select').trigger('change');
+    // readyFlatsButton.addEventListener('click', e => {
+    //   e.preventDefault();
+    //   $('.obj-filter__complex-select').val([]);
+    //   $('.obj-filter__complex-select').trigger('change');
+    //   $('.obj-filter__deadline-select').val([]);
+    //   $('.obj-filter__deadline-select').trigger('change');
 
-      this.setFilterOption('ready', true);
-      this.startFlatCounterRender = 0;
-      this.currentPagination = 9;
-      readyFlatsButton.style.backgroundColor = 'rgba(255, 138, 0, 0.25)';
-      readyFlatsButton.style.borderColor = '#fff';
-      readyFlatsButton.style.color = '#fff';
-      this.renderFlatsList();
-    });
+    //   this.setFilterOption('ready', true);
+    //   this.startFlatCounterRender = 0;
+    //   this.currentPagination = 9;
+    //   readyFlatsButton.style.backgroundColor = 'rgba(255, 138, 0, 0.25)';
+    //   readyFlatsButton.style.borderColor = '#fff';
+    //   readyFlatsButton.style.color = '#fff';
+    //   this.renderFlatsList();
+    // });
   }
 
   filterFlatsList() {
@@ -222,7 +219,9 @@ class Filter {
       const isStudioAndStudiosSelected =
         this.rooms.includes('s') && flat.studio;
       if (this.ready) {
-        return Number(flat.delivery) < 2018;
+        if (Number(flat.delivery) > 2019) {
+          return false;
+        }
       }
 
       if (this.rooms.length) {
@@ -273,6 +272,12 @@ $(document).ready(function() {
     const roomsCheckboxes = roomsForm.querySelectorAll(
       'input[type="checkbox"]'
     );
+
+    const readyCheckbox = document.querySelector('#ready');
+
+    readyCheckbox.addEventListener('change', function(e) {
+      filterEntity.setFilterOption('ready', e.target.checked);
+    });
 
     roomsCheckboxes.forEach(function(sel) {
       sel.addEventListener('change', function(e) {

@@ -155,21 +155,21 @@ $(document).ready(function() {
       width: '270px',
       closeOnSelect: false,
       data: [
-        {
-          obj: 'centr',
-          text: 'МКР Центральный',
-          id: 'c',
-        },
+        // {
+        //   obj: 'centr',
+        //   text: 'МКР Центральный',
+        //   id: 'c',
+        // },
         {
           obj: 'chd',
           text: 'ЖК Верхний',
           id: 'cd',
         },
-        {
-          obj: 'saray',
-          text: 'ЖК Павловский',
-          id: 'p',
-        },
+        // {
+        //   obj: 'saray',
+        //   text: 'ЖК Павловский',
+        //   id: 'p',
+        // },
         {
           obj: 'premier',
           text: 'ЖК Премьер',

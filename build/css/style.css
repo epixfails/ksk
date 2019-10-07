@@ -2909,6 +2909,11 @@ pre {
   .obj-filter__deadline, .obj-filter__build-apartments {
     width: 50%;
     padding: 0 10px; }
+  .obj-filter__build-apartments {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 0; }
   @media (min-width: 1200px) {
     .obj-filter__deadline {
       width: 35%; } }
@@ -2919,7 +2924,7 @@ pre {
     .obj-filter__build-apartments {
       width: 30%;
       padding-right: 0;
-      padding-left: 30px; } }
+      padding-left: 20px; } }
   .obj-filter__rooms {
     display: none; }
     @media (min-width: 1200px) {
@@ -2950,6 +2955,8 @@ pre {
     line-height: 45px;
     border: 1px solid #ffffff; }
     .obj-filter__rooms-count label:hover {
+      cursor: pointer; }
+    .obj-filter__rooms-count label__ready label:hover {
       cursor: pointer; }
   .obj-filter input[type='checkbox']:checked + label {
     background-color: #ffffff;
@@ -3009,6 +3016,9 @@ pre {
         width: 20%; } }
     .obj-filter__results-btn:hover {
       background-color: #ee7231; }
+  .obj-filter__ready label {
+    width: 244px;
+    font-size: 20px; }
 
 .select2-results__option {
   background: #039577;
