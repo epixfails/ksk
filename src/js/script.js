@@ -91,6 +91,8 @@ $(document).ready(function() {
     adaptiveHeight: true,
   });
 
+  $('.promo__slider').css('display', 'block');
+
   // СЛАЙДЕР ОБЪЕКТОВ
   $('.objects__slider').slick({
     infinite: false,
@@ -130,6 +132,8 @@ $(document).ready(function() {
     slidesToShow: 1,
     adaptiveHeight: true,
   });
+
+  $('.pictures-slider').css('display', 'block');
 
   let slider = $('.pictures-slider');
 

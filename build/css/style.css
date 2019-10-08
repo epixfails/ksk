@@ -1224,7 +1224,8 @@ pre {
       padding: 15px; } }
 
 .promo__slider {
-  position: relative; }
+  position: relative;
+  display: none; }
   @media (min-width: 1200px) {
     .promo__slider {
       padding: 0 55px; } }
@@ -1977,6 +1978,7 @@ pre {
 
 .pictures-slider {
   position: relative;
+  display: none;
   padding: 0 12px;
   padding-top: 12px; }
   .pictures-slider .slick-arrow {
