@@ -1896,7 +1896,6 @@ pre {
     .specification__pictures div {
       visibility: visible; }
   .specification__pictures div {
-    display: block;
     margin: 15px 0;
     color: #ee7231;
     text-align: center; }

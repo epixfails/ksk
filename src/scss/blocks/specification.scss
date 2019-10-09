@@ -3,7 +3,6 @@
   border: 2px solid #ffe1d0;
 
   &__wrap {
-
     @media (min-width: $screen-sm) {
       display: flex;
       flex-direction: row;
@@ -42,7 +41,6 @@
   }
 
   &__pictures div {
-    display: block;
     margin: 15px 0;
     color: $main-color;
     text-align: center;
@@ -91,7 +89,7 @@
     }
   }
 
-  &__all-news-link a{
+  &__all-news-link a {
     font-size: 22px;
     color: $main-color;
     text-decoration: underline;
@@ -110,7 +108,6 @@
   }
 
   &__video iframe {
-
     @media (min-width: $screen-sm) {
       min-height: 375px;
     }
