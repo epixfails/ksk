@@ -91,8 +91,6 @@ $(document).ready(function() {
     adaptiveHeight: true,
   });
 
-  $('.promo__slider').css('display', 'block');
-
   // СЛАЙДЕР ОБЪЕКТОВ
   $('.objects__slider').slick({
     infinite: false,
@@ -126,14 +124,13 @@ $(document).ready(function() {
     if (spanBlock) {
       spanBlock.textContent = slick.slideCount;
     }
+    $('.pictures-slider').css('display', 'block');
   });
 
   $('.pictures-slider').slick({
     slidesToShow: 1,
     adaptiveHeight: true,
   });
-
-  $('.pictures-slider').css('display', 'block');
 
   let slider = $('.pictures-slider');
 

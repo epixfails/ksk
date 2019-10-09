@@ -1224,8 +1224,7 @@ pre {
       padding: 15px; } }
 
 .promo__slider {
-  position: relative;
-  display: none; }
+  position: relative; }
   @media (min-width: 1200px) {
     .promo__slider {
       padding: 0 55px; } }
