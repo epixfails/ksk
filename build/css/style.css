@@ -2851,10 +2851,6 @@ pre {
   .obj-filter__deadline-wrap input[type='search']::-webkit-input-placeholder,
   .obj-filter__rooms-sel-wrap input[type='search']::-webkit-input-placeholder {
     color: #ffffff !important; }
-  .obj-filter__complex-wrap input[type='search']::-moz-placeholder,
-  .obj-filter__deadline-wrap input[type='search']::-moz-placeholder,
-  .obj-filter__rooms-sel-wrap input[type='search']::-moz-placeholder {
-    color: #ffffff !important; }
   .obj-filter__complex-wrap input[type='search']:-ms-input-placeholder,
   .obj-filter__deadline-wrap input[type='search']:-ms-input-placeholder,
   .obj-filter__rooms-sel-wrap input[type='search']:-ms-input-placeholder {
@@ -2889,19 +2885,66 @@ pre {
   @media (min-width: 1200px) {
     .obj-filter__complex {
       width: 25%; } }
+  .obj-filter__complex-wrap, .obj-filter__deadline-wrap {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column; }
+  .obj-filter__complex-wrap {
+    margin-left: 15px; }
+    @media (min-width: 1200px) {
+      .obj-filter__complex-wrap {
+        margin-left: 0; } }
+  .obj-filter__complex-sel, .obj-filter__deadline-sel {
+    margin-bottom: 10px;
+    cursor: pointer; }
+  .obj-filter__complex-sel label,
+  .obj-filter__deadline-sel label {
+    cursor: pointer; }
+  .obj-filter__complex-sel input[type='checkbox'],
+  .obj-filter__deadline-sel input[type='checkbox'] {
+    display: none;
+    cursor: pointer; }
+  .obj-filter__complex-sel label:before,
+  .obj-filter__deadline-sel label:before {
+    content: '';
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    vertical-align: middle;
+    margin-right: 15px;
+    border: 1px solid #ffffff; }
+    @media (min-width: 1200px) {
+      .obj-filter__complex-sel label:before,
+      .obj-filter__deadline-sel label:before {
+        width: 45px;
+        height: 45px; } }
+  .obj-filter__complex-sel input[type='checkbox']:checked + label:before,
+  .obj-filter__deadline-sel input[type='checkbox']:checked + label:before {
+    background-color: #ffffff; }
   .obj-filter__inner {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: horizontal;
+    -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-box-align: end;
-        -ms-flex-align: end;
-            align-items: flex-end;
+        -ms-flex-direction: column;
+            flex-direction: column;
     margin-left: -10px;
     margin-right: -10px; }
+    @media (min-width: 768px) {
+      .obj-filter__inner {
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: row;
+                flex-direction: row;
+        -webkit-box-align: end;
+            -ms-flex-align: end;
+                align-items: flex-end;
+        padding-left: 15px; } }
     @media (min-width: 1200px) {
       .obj-filter__inner {
         width: 75%;
@@ -2914,12 +2957,20 @@ pre {
     display: -ms-flexbox;
     display: flex;
     margin: 0; }
-  @media (min-width: 1200px) {
-    .obj-filter__deadline {
-      width: 35%; } }
-  @media (min-width: 768px) {
-    .obj-filter__deadline-wrap {
-      width: 270px; } }
+  .obj-filter__deadline {
+    margin-bottom: 20px; }
+    @media (min-width: 768px) {
+      .obj-filter__deadline {
+        margin-bottom: 0; } }
+    @media (min-width: 1200px) {
+      .obj-filter__deadline {
+        width: 35%; } }
+  .obj-filter__deadline-wrap {
+    margin-left: 15px; }
+    @media (min-width: 768px) {
+      .obj-filter__deadline-wrap {
+        margin-left: 0;
+        width: 270px; } }
   @media (min-width: 1200px) {
     .obj-filter__build-apartments {
       width: 30%;
@@ -2958,7 +3009,7 @@ pre {
       cursor: pointer; }
     .obj-filter__rooms-count label__ready label:hover {
       cursor: pointer; }
-  .obj-filter input[type='checkbox']:checked + label {
+  .obj-filter__rooms-count input[type='checkbox']:checked + label {
     background-color: #ffffff;
     color: #039577; }
   .obj-filter__build-apartments-btn {
@@ -3471,10 +3522,6 @@ pre {
       padding-left: 5px; }
       .modal-content__form-input::-webkit-input-placeholder,
       .modal-success-content__form-input::-webkit-input-placeholder {
-        text-align: center;
-        font-size: 14px; }
-      .modal-content__form-input::-moz-placeholder,
-      .modal-success-content__form-input::-moz-placeholder {
         text-align: center;
         font-size: 14px; }
       .modal-content__form-input:-ms-input-placeholder,

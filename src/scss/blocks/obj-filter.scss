@@ -133,12 +133,68 @@
     }
   }
 
+  &__complex-wrap,
+  &__deadline-wrap {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__complex-wrap {
+    margin-left: 15px;
+
+    @media (min-width: $screen-lg) {
+      margin-left: 0;
+    }
+  }
+
+  &__complex-sel,
+  &__deadline-sel {
+    margin-bottom: 10px;
+    cursor: pointer;
+  }
+  &__complex-sel label,
+  &__deadline-sel label {
+    cursor: pointer;
+  }
+
+  &__complex-sel input[type='checkbox'],
+  &__deadline-sel input[type='checkbox'] {
+    display: none;
+    cursor: pointer;
+  }
+
+  &__complex-sel label:before,
+  &__deadline-sel label:before {
+    content: '';
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    vertical-align: middle;
+    margin-right: 15px;
+    border: 1px solid $text-color-white;
+
+    @media (min-width: $screen-lg) {
+      width: 45px;
+      height: 45px;
+    }
+  }
+
+  &__complex-sel input[type='checkbox']:checked + label:before,
+  &__deadline-sel input[type='checkbox']:checked + label:before {
+    background-color: $text-color-white;
+  }
+
   &__inner {
     display: flex;
-    flex-direction: row;
-    align-items: flex-end;
+    flex-direction: column;
     margin-left: -10px;
     margin-right: -10px;
+
+    @media (min-width: $screen-sm) {
+      flex-direction: row;
+      align-items: flex-end;
+      padding-left: 15px;
+    }
 
     @media (min-width: $screen-lg) {
       width: 75%;
@@ -158,13 +214,22 @@
   }
 
   &__deadline {
+    margin-bottom: 20px;
+
+    @media (min-width: $screen-sm) {
+      margin-bottom: 0;
+    }
+
     @media (min-width: $screen-lg) {
       width: 35%;
     }
   }
 
   &__deadline-wrap {
+    margin-left: 15px;
+
     @media (min-width: $screen-sm) {
+      margin-left: 0;
       width: 270px;
     }
   }
@@ -228,7 +293,7 @@
     }
   }
 
-  input[type='checkbox']:checked + label {
+  &__rooms-count input[type='checkbox']:checked + label {
     background-color: $text-color-white;
     color: $second-color;
   }

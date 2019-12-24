@@ -127,24 +127,40 @@
               <div class="obj-filter__complex">
                 <div class="obj-filter__complex-title">Жилой комплекс</div>
                 <div class="obj-filter__complex-wrap">
-                  <select
-                    name="object"
-                    multiple="multiple"
-                    class="obj-filter__complex-select"
-                  >
-                  </select>
+<!--                  <select-->
+<!--                    name="object"-->
+<!--                    multiple="multiple"-->
+<!--                    class="obj-filter__complex-select"-->
+<!--                  >-->
+<!--                  </select>-->
+                  <span class="obj-filter__complex-sel">
+                    <input id="cs0" name="complex" type="checkbox" value="verhniy" />
+                    <label for="cs0">ЖК "Верхний"</label>
+                  </span>
+                  <span class="obj-filter__complex-sel">
+                    <input id="cs1" name="complex" type="checkbox" value="premier" />
+                    <label for="cs1">Дом "Премьер"</label>
+                  </span>
                 </div>
               </div>
               <div class="obj-filter__inner">
                 <div class="obj-filter__deadline">
                   <div class="obj-filter__deadline-title">Срок сдачи</div>
                   <div class="obj-filter__deadline-wrap">
-                    <select
-                      name="deadline"
-                      multiple="multiple"
-                      class="obj-filter__deadline-select"
-                    >
-                    </select>
+<!--                    <select-->
+<!--                      name="deadline"-->
+<!--                      multiple="multiple"-->
+<!--                      class="obj-filter__deadline-select"-->
+<!--                    >-->
+<!--                    </select>-->
+                    <span class="obj-filter__deadline-sel">
+                      <input id="ds0" name="deadline" type="checkbox" value="s" />
+                      <label for="ds0">2021 год.</label>
+                    </span>
+                    <span class="obj-filter__deadline-sel">
+                      <input name="deadline" id="ds1" type="checkbox" value="1" />
+                      <label for="ds1">2019 год.</label>
+                    </span>
                   </div>
                 </div>
                 <div class="obj-filter__rooms">
