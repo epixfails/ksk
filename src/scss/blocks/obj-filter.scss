@@ -199,6 +199,7 @@
     @media (min-width: $screen-lg) {
       width: 75%;
       margin: 0;
+      align-items: flex-start;
     }
   }
 
@@ -211,6 +212,13 @@
   &__build-apartments {
     display: flex;
     margin: 0;
+
+    @media (min-width: $screen-lg) {
+      width: 30%;
+      padding-right: 0;
+      padding-left: 20px;
+      margin-top: 35px;
+    }
   }
 
   &__deadline {
@@ -234,13 +242,13 @@
     }
   }
 
-  &__build-apartments {
-    @media (min-width: $screen-lg) {
-      width: 30%;
-      padding-right: 0;
-      padding-left: 20px;
-    }
-  }
+  //&__build-apartments {
+  //  @media (min-width: $screen-lg) {
+  //    width: 30%;
+  //    padding-right: 0;
+  //    padding-left: 20px;
+  //  }
+  //}
 
   &__rooms {
     display: none;
@@ -357,9 +365,21 @@
     }
   }
 
+  &__ready {
+
+    @media (min-width: $screen-lg) {
+      width: 100%;
+      padding-right: 0;
+    }
+  }
+
   &__ready label {
     width: 244px;
     font-size: 20px;
+
+    @media (min-width: $screen-lg) {
+      width: 100%;
+    }
   }
 }
 

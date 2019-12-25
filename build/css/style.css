@@ -2948,7 +2948,10 @@ pre {
     @media (min-width: 1200px) {
       .obj-filter__inner {
         width: 75%;
-        margin: 0; } }
+        margin: 0;
+        -webkit-box-align: start;
+            -ms-flex-align: start;
+                align-items: flex-start; } }
   .obj-filter__deadline, .obj-filter__build-apartments {
     width: 50%;
     padding: 0 10px; }
@@ -2957,6 +2960,12 @@ pre {
     display: -ms-flexbox;
     display: flex;
     margin: 0; }
+    @media (min-width: 1200px) {
+      .obj-filter__build-apartments {
+        width: 30%;
+        padding-right: 0;
+        padding-left: 20px;
+        margin-top: 35px; } }
   .obj-filter__deadline {
     margin-bottom: 20px; }
     @media (min-width: 768px) {
@@ -2971,11 +2980,6 @@ pre {
       .obj-filter__deadline-wrap {
         margin-left: 0;
         width: 270px; } }
-  @media (min-width: 1200px) {
-    .obj-filter__build-apartments {
-      width: 30%;
-      padding-right: 0;
-      padding-left: 20px; } }
   .obj-filter__rooms {
     display: none; }
     @media (min-width: 1200px) {
@@ -3067,9 +3071,16 @@ pre {
         width: 20%; } }
     .obj-filter__results-btn:hover {
       background-color: #ee7231; }
+  @media (min-width: 1200px) {
+    .obj-filter__ready {
+      width: 100%;
+      padding-right: 0; } }
   .obj-filter__ready label {
     width: 244px;
     font-size: 20px; }
+    @media (min-width: 1200px) {
+      .obj-filter__ready label {
+        width: 100%; } }
 
 .select2-results__option {
   background: #039577;
