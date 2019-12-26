@@ -152,6 +152,7 @@ class Filter {
   }
 
   fetchFlatsList() {
+    console.log('FETCH FLATS LIST')
     var xhr = new XMLHttpRequest();
     xhr.open('GET', './new_jsonFlats.json', false);
     xhr.send();
@@ -256,16 +257,43 @@ class Filter {
 export const filterEntity = new Filter();
 
 $(document).ready(function() {
-  if (document.querySelector('.obj-filter__complex-select')) {
+  if (document.querySelector('.obj-filter__results')) {
     filterEntity.fetchFlatsList();
 
-    $('.obj-filter__complex-select').on('change', function(e) {
-      filterEntity.setFilterOption('complex', $(e.target).select2('val'));
+    // $('.obj-filter__complex-select').on('change', function(e) {
+    //   filterEntity.setFilterOption('complex', $(e.target).select2('val'));
+    // });
+
+    const complexCheckboxes = document.querySelectorAll('.js-complex')
+
+    complexCheckboxes.forEach(function(comp) {
+      comp.addEventListener('change', function(e) {
+        const newComplexSelection = [];
+        complexCheckboxes.forEach(function(check) {
+          if (check.checked) newComplexSelection.push(check.value);
+        });
+
+        filterEntity.setFilterOption('complex', newComplexSelection);
+      });
     });
 
-    $('.obj-filter__deadline-select').on('change', function(e) {
-      filterEntity.setFilterOption('finishDates', $(e.target).select2('val'));
+    const deadlineCheckboxes = document.querySelectorAll('.js-deadline')
+
+    deadlineCheckboxes.forEach(function(d) {
+      d.addEventListener('change', function(e) {
+        const newDeadlineSelection = [];
+        deadlineCheckboxes.forEach(function(check) {
+          if (check.checked) newDeadlineSelection.push(check.value);
+        });
+
+        filterEntity.setFilterOption('finishDates', newDeadlineSelection);
+      });
     });
+
+
+    // $('.obj-filter__deadline-select').on('change', function(e) {
+    //   filterEntity.setFilterOption('finishDates', $(e.target).select2('val'));
+    // });
 
     const roomsForm = document.querySelector('.obj-filter__rooms-wrap');
 

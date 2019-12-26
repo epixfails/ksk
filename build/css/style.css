@@ -2851,6 +2851,10 @@ pre {
   .obj-filter__deadline-wrap input[type='search']::-webkit-input-placeholder,
   .obj-filter__rooms-sel-wrap input[type='search']::-webkit-input-placeholder {
     color: #ffffff !important; }
+  .obj-filter__complex-wrap input[type='search']::-moz-placeholder,
+  .obj-filter__deadline-wrap input[type='search']::-moz-placeholder,
+  .obj-filter__rooms-sel-wrap input[type='search']::-moz-placeholder {
+    color: #ffffff !important; }
   .obj-filter__complex-wrap input[type='search']:-ms-input-placeholder,
   .obj-filter__deadline-wrap input[type='search']:-ms-input-placeholder,
   .obj-filter__rooms-sel-wrap input[type='search']:-ms-input-placeholder {
@@ -3032,8 +3036,7 @@ pre {
   .obj-filter__results {
     display: -webkit-box;
     display: -ms-flexbox;
-    display: flex;
-    margin-top: 10px; }
+    display: flex; }
     @media (min-width: 1200px) {
       .obj-filter__results {
         display: -webkit-box;
@@ -3533,6 +3536,10 @@ pre {
       padding-left: 5px; }
       .modal-content__form-input::-webkit-input-placeholder,
       .modal-success-content__form-input::-webkit-input-placeholder {
+        text-align: center;
+        font-size: 14px; }
+      .modal-content__form-input::-moz-placeholder,
+      .modal-success-content__form-input::-moz-placeholder {
         text-align: center;
         font-size: 14px; }
       .modal-content__form-input:-ms-input-placeholder,
