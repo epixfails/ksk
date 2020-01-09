@@ -228,13 +228,14 @@ $(document).ready(function() {
   const searchQuery = window.location.search;
   const complex = window.location.search.split('=')[1];
   if (complex) {
-    if (complex === 'pavlovsky') {
-      $('.obj-filter__complex-select').val(['p']);
-      $('.obj-filter__complex-select').trigger('change');
-    } else if (complex === 'centralny') {
-      $('.obj-filter__complex-select').val(['c']);
-      $('.obj-filter__complex-select').trigger('change');
-    } else if (complex === 'verhniy') {
+    // if (complex === 'pavlovsky') {
+    //   $('.obj-filter__complex-select').val(['p']);
+    //   $('.obj-filter__complex-select').trigger('change');
+    // } else if (complex === 'centralny') {
+    //   $('.obj-filter__complex-select').val(['c']);
+    //   $('.obj-filter__complex-select').trigger('change');
+    // } else 
+    if (complex === 'verhniy') {
       $('.obj-filter__complex-select').val(['cd']);
       $('.obj-filter__complex-select').trigger('change');
     } else if (complex === 'premier') {
@@ -243,7 +244,18 @@ $(document).ready(function() {
     }
   }
 
-  if (['pavlovsky', 'centralny', 'verhniy', 'premier'].includes(complex)) {
+  if (['verhniy', 'premier'].includes(complex)) {
+    const complexCheckboxes = document.querySelectorAll('.js-complex')
+    const newComplexSelection = [];
+    complexCheckboxes.forEach(function(comp) {
+        if(complex==='verhniy' && comp.value==='cd'){
+          comp.setAttribute('checked', true)
+          newComplexSelection.push('cd')
+        } else if(complex==='premier' && comp.value==='pr')
+        comp.setAttribute('checked', true)
+        newComplexSelection.push('pr')
+        });
+        filterEntity.setFilterOption('complex', newComplexSelection);
     filterEntity.renderFlatsList();
   }
 
