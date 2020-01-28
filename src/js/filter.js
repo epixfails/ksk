@@ -89,6 +89,7 @@ class Filter {
       wrapper.innerHTML = '';
     }
     const listPreparedForRender = this.filterFlatsList();
+    console.log(listPreparedForRender)
 
     for (let i = this.startFlatCounterRender; i < this.currentPagination; i++) {
       if (listPreparedForRender[i]) {
@@ -121,7 +122,13 @@ class Filter {
           }</span>
         </div>
         <div class="product-card__object-status">
-          <span>Сдается</span>
+          <span>Этаж ${listPreparedForRender[i].floors}</span>
+        </div>
+        <div class="product-card__object-status">
+          <span>Секция ${listPreparedForRender[i].section}</span>
+        </div>
+        <div class="product-card__object-status">
+          <span>Смотреть планировку</span>
         </div>
         <div class="product-card__square">
           <span>Площадь</span>

@@ -44,7 +44,7 @@ $(document).ready(function() {
     const _token = $("input[name='_token']").val();
 
     $.ajax({
-      url: 'http://ksk21.webconcept21.ru/feedback',
+      url: 'www.ksk21.ru/feedback',
       method: 'POST',
       data: $('#modal-form').serialize(),
       beforeSend: function(xhr, type) {
