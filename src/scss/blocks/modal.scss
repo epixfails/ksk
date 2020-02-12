@@ -17,6 +17,25 @@
   top: 70%;
   cursor: pointer;
   animation: openModalButtonAnimation 0.5s infinite;
+
+  @media (max-width: 400px) {
+    display: none;
+  }
+}
+
+.open-modal__mobile {
+  display: block;
+  width: 100px;
+  position: fixed;
+  right: 10vw;
+  top: 70%;
+  cursor: pointer;
+  display: none;
+  animation: openModalButtonAnimation 0.5s infinite;
+
+  @media (max-width: 400px) {
+    display: block;
+  }
 }
 
 .modal,
