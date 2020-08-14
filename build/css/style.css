@@ -2816,6 +2816,9 @@ pre {
     @media (min-width: 1200px) {
       .obj-filter__complex-title, .obj-filter__deadline-title, .obj-filter__rooms-title {
         margin-left: 0; } }
+    @media (max-width: 768px) {
+      .obj-filter__complex-title, .obj-filter__deadline-title, .obj-filter__rooms-title {
+        margin-left: 0; } }
   .obj-filter__complex-wrap .select2-selection,
   .obj-filter__deadline-wrap .select2-selection,
   .obj-filter__rooms-sel-wrap .select2-selection {
@@ -2888,47 +2891,50 @@ pre {
       display: inline-block; } }
   @media (min-width: 1200px) {
     .obj-filter__complex {
-      width: 25%; } }
+      width: 40%; } }
   .obj-filter__complex-wrap, .obj-filter__deadline-wrap {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column; }
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap; }
   .obj-filter__complex-wrap {
     margin-left: 15px; }
     @media (min-width: 1200px) {
       .obj-filter__complex-wrap {
         margin-left: 0; } }
-  .obj-filter__complex-sel, .obj-filter__deadline-sel {
+    @media (max-width: 768px) {
+      .obj-filter__complex-wrap {
+        margin-left: 0; } }
+  .obj-filter__complex-sel {
     margin-bottom: 10px;
     cursor: pointer; }
-  .obj-filter__complex-sel label,
-  .obj-filter__deadline-sel label {
-    cursor: pointer; }
+    @media (max-width: 768px) {
+      .obj-filter__complex-sel {
+        margin-left: 0;
+        width: 100%; } }
+  .obj-filter__complex-sel label {
+    cursor: pointer;
+    display: block;
+    width: 232px;
+    height: 46px;
+    padding: 9px 0 5px;
+    font-size: 20px;
+    text-align: center;
+    line-height: 23px;
+    margin-right: 10px;
+    border: 1px solid #ffffff; }
+    @media (max-width: 768px) {
+      .obj-filter__complex-sel label {
+        margin-left: 0;
+        width: 100%; } }
   .obj-filter__complex-sel input[type='checkbox'],
-  .obj-filter__deadline-sel input[type='checkbox'] {
+  .obj-filter__deadline-sel input[type='radio'] {
     display: none;
     cursor: pointer; }
-  .obj-filter__complex-sel label:before,
-  .obj-filter__deadline-sel label:before {
-    content: '';
-    display: inline-block;
-    width: 30px;
-    height: 30px;
-    vertical-align: middle;
-    margin-right: 15px;
-    border: 1px solid #ffffff; }
-    @media (min-width: 1200px) {
-      .obj-filter__complex-sel label:before,
-      .obj-filter__deadline-sel label:before {
-        width: 45px;
-        height: 45px; } }
-  .obj-filter__complex-sel input[type='checkbox']:checked + label:before,
-  .obj-filter__deadline-sel input[type='checkbox']:checked + label:before {
-    background-color: #ffffff; }
+  .obj-filter__complex-sel input[type='checkbox']:checked + label,
+  .obj-filter__deadline-sel input[type='radio']:checked + label {
+    background-color: rgba(255, 255, 255, 0.3); }
   .obj-filter__inner {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -2936,9 +2942,7 @@ pre {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
-            flex-direction: column;
-    margin-left: -10px;
-    margin-right: -10px; }
+            flex-direction: column; }
     @media (min-width: 768px) {
       .obj-filter__inner {
         -webkit-box-orient: horizontal;
@@ -2951,45 +2955,33 @@ pre {
         padding-left: 15px; } }
     @media (min-width: 1200px) {
       .obj-filter__inner {
-        width: 75%;
+        width: 60%;
         margin: 0;
         -webkit-box-align: start;
             -ms-flex-align: start;
                 align-items: flex-start; } }
-  .obj-filter__deadline, .obj-filter__build-apartments {
+  .obj-filter__build-apartments {
     width: 50%;
     padding: 0 10px; }
   .obj-filter__build-apartments {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    margin: 0; }
+    margin-left: auto;
+    width: 326px; }
     @media (min-width: 1200px) {
       .obj-filter__build-apartments {
-        width: 30%;
         padding-right: 0;
         padding-left: 20px;
         margin-top: 35px; } }
-  .obj-filter__deadline {
-    margin-bottom: 20px; }
-    @media (min-width: 768px) {
-      .obj-filter__deadline {
-        margin-bottom: 0; } }
-    @media (min-width: 1200px) {
-      .obj-filter__deadline {
-        width: 35%; } }
-  .obj-filter__deadline-wrap {
-    margin-left: 15px; }
-    @media (min-width: 768px) {
-      .obj-filter__deadline-wrap {
-        margin-left: 0;
-        width: 270px; } }
-  .obj-filter__rooms {
-    display: none; }
-    @media (min-width: 1200px) {
-      .obj-filter__rooms {
-        display: inline-block;
-        width: 35%; } }
+    @media (max-width: 768px) {
+      .obj-filter__build-apartments {
+        width: 100%;
+        margin-top: 20px;
+        padding: 0; } }
+  @media (min-width: 1200px) {
+    .obj-filter__rooms {
+      display: block; } }
   @media (min-width: 1200px) {
     .obj-filter__rooms-sel {
       display: none; } }
@@ -2997,29 +2989,35 @@ pre {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    margin-left: -10px;
-    margin-right: -10px; }
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between; }
   .obj-filter__rooms-count {
-    width: 25%;
     height: 45px;
     padding: 0 10px; }
+    @media (max-width: 768px) {
+      .obj-filter__rooms-count {
+        padding: 0 5px 0 0; } }
   .obj-filter__rooms-count input[type='checkbox'] {
     display: none;
     cursor: pointer; }
   .obj-filter__rooms-count label {
     display: block;
     font-size: 28px;
+    padding: 0 28px;
     height: 100%;
     text-align: center;
     line-height: 45px;
     border: 1px solid #ffffff; }
     .obj-filter__rooms-count label:hover {
       cursor: pointer; }
+    @media (max-width: 768px) {
+      .obj-filter__rooms-count label {
+        padding: 0 25px; } }
     .obj-filter__rooms-count label__ready label:hover {
       cursor: pointer; }
   .obj-filter__rooms-count input[type='checkbox']:checked + label {
-    background-color: #ffffff;
-    color: #039577; }
+    background-color: rgba(255, 255, 255, 0.3); }
   .obj-filter__build-apartments-btn {
     width: 100%;
     height: 45px;
@@ -3036,7 +3034,9 @@ pre {
   .obj-filter__results {
     display: -webkit-box;
     display: -ms-flexbox;
-    display: flex; }
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap; }
     @media (min-width: 1200px) {
       .obj-filter__results {
         display: -webkit-box;
@@ -3053,37 +3053,64 @@ pre {
     -webkit-box-ordinal-group: 2;
         -ms-flex-order: 1;
             order: 1;
-    width: 50%;
     margin-bottom: 0;
     text-align: center; }
     @media (min-width: 1200px) {
       .obj-filter__results-text {
-        width: 30%;
         font-size: 22px; } }
   .obj-filter__results-btn {
-    width: 50%;
+    width: 296px;
     min-height: 45px;
     font-size: 16px;
     border: none;
     outline: none;
     cursor: pointer;
     -webkit-transition: all 0.3s;
-    transition: all 0.3s; }
-    @media (min-width: 1200px) {
+    transition: all 0.3s;
+    color: #039577; }
+    @media (max-width: 768px) {
       .obj-filter__results-btn {
-        width: 20%; } }
-    .obj-filter__results-btn:hover {
-      background-color: #ee7231; }
+        margin-bottom: 10px;
+        width: 100%; } }
+  .obj-filter__ready input[type='checkbox'] {
+    display: none; }
+  .obj-filter__ready input[type='checkbox']:checked + label {
+    background-color: rgba(255, 255, 255, 0.3); }
   @media (min-width: 1200px) {
     .obj-filter__ready {
       width: 100%;
       padding-right: 0; } }
+  @media (max-width: 768px) {
+    .obj-filter__ready {
+      width: 100%;
+      padding: 0; } }
   .obj-filter__ready label {
     width: 244px;
     font-size: 20px; }
     @media (min-width: 1200px) {
       .obj-filter__ready label {
         width: 100%; } }
+    @media (max-width: 768px) {
+      .obj-filter__ready label {
+        width: 100%;
+        padding: 0; } }
+
+.back-top {
+  display: none;
+  width: 100px;
+  position: fixed;
+  right: 10vw;
+  top: 50%;
+  cursor: pointer; }
+
+.product-card__sale {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0 5px;
+  background-color: #EE7231;
+  text-transform: uppercase;
+  color: #fff; }
 
 .select2-results__option {
   background: #039577;

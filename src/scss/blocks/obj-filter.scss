@@ -1,3 +1,5 @@
+// OBJ_FILTER
+
 .obj-filter {
   background-color: $second-color;
   padding: 15px;
@@ -36,6 +38,10 @@
     @media (min-width: $screen-lg) {
       margin-left: 0;
     }
+
+    @media (max-width: $screen-sm) {
+      margin-left: 0;
+    }
   }
 
   &__complex-wrap .select2-selection,
@@ -70,24 +76,9 @@
     top: 17px;
   }
 
-  //&__complex-wrap .select2-selection__arrow,
-  //&__deadline-wrap .select2-selection__arrow,
-  //&__rooms-sel-wrap .select2-selection__arrow {
-  //  top: 9px !important;
-  //  right: 10px !important;
-  //}
-
   .select2-container--default .select2-search--inline .select2-search__field {
     cursor: pointer;
   }
-
-  //&__deadline-wrap .select2-selection__placeholder,
-  //&__complex-wrap .select2-selection__rendered,
-  //&__deadline-wrap .select2-selection__rendered,
-  //&__rooms-sel-wrap .select2-selection__placeholder,
-  //&__rooms-sel-wrap .select2-selection__rendered {
-  //  color: $text-color-white !important;
-  //}
 
   &__complex-wrap input[type='search']::placeholder,
   &__deadline-wrap input[type='search']::placeholder,
@@ -129,14 +120,14 @@
 
   &__complex {
     @media (min-width: $screen-lg) {
-      width: 25%;
+      width: 40%;
     }
   }
 
   &__complex-wrap,
   &__deadline-wrap {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
   }
 
   &__complex-wrap {
@@ -145,50 +136,52 @@
     @media (min-width: $screen-lg) {
       margin-left: 0;
     }
+
+    @media (max-width: $screen-sm) {
+      margin-left: 0;
+    }
   }
 
-  &__complex-sel,
-  &__deadline-sel {
+  &__complex-sel{
     margin-bottom: 10px;
     cursor: pointer;
+    @media (max-width: $screen-sm) {
+      margin-left: 0;
+      width: 100%;
+    }
   }
-  &__complex-sel label,
-  &__deadline-sel label {
+  &__complex-sel label{
     cursor: pointer;
+    display: block;
+    width: 232px;
+    height: 46px;
+    padding: 9px 0 5px;
+    font-size: 20px;
+    text-align: center;
+    line-height: 23px;
+    margin-right: 10px;
+    border: 1px solid $text-color-white;
+
+    @media (max-width: $screen-sm) {
+      margin-left: 0;
+      width: 100%;
+    }
   }
 
   &__complex-sel input[type='checkbox'],
-  &__deadline-sel input[type='checkbox'] {
+  &__deadline-sel input[type='radio'] {
     display: none;
     cursor: pointer;
   }
 
-  &__complex-sel label:before,
-  &__deadline-sel label:before {
-    content: '';
-    display: inline-block;
-    width: 30px;
-    height: 30px;
-    vertical-align: middle;
-    margin-right: 15px;
-    border: 1px solid $text-color-white;
-
-    @media (min-width: $screen-lg) {
-      width: 45px;
-      height: 45px;
-    }
-  }
-
-  &__complex-sel input[type='checkbox']:checked + label:before,
-  &__deadline-sel input[type='checkbox']:checked + label:before {
-    background-color: $text-color-white;
+  &__complex-sel input[type='checkbox']:checked + label,
+  &__deadline-sel input[type='radio']:checked + label {
+    background-color: rgba(255, 255, 255, 0.3);
   }
 
   &__inner {
     display: flex;
     flex-direction: column;
-    margin-left: -10px;
-    margin-right: -10px;
 
     @media (min-width: $screen-sm) {
       flex-direction: row;
@@ -197,13 +190,12 @@
     }
 
     @media (min-width: $screen-lg) {
-      width: 75%;
+      width: 60%;
       margin: 0;
       align-items: flex-start;
     }
   }
 
-  &__deadline,
   &__build-apartments {
     width: 50%;
     padding: 0 10px;
@@ -211,43 +203,25 @@
 
   &__build-apartments {
     display: flex;
-    margin: 0;
+    margin-left: auto;
+    width: 326px;
 
     @media (min-width: $screen-lg) {
-      width: 30%;
       padding-right: 0;
       padding-left: 20px;
       margin-top: 35px;
     }
-  }
 
-  &__deadline {
-    margin-bottom: 20px;
-
-    @media (min-width: $screen-sm) {
-      margin-bottom: 0;
-    }
-
-    @media (min-width: $screen-lg) {
-      width: 35%;
-    }
-  }
-
-  &__deadline-wrap {
-    margin-left: 15px;
-
-    @media (min-width: $screen-sm) {
-      margin-left: 0;
-      width: 270px;
+    @media (max-width: $screen-sm) {
+      width: 100%;
+      margin-top: 20px;
+      padding: 0;
     }
   }
 
   &__rooms {
-    display: none;
-
     @media (min-width: $screen-lg) {
-      display: inline-block;
-      width: 35%;
+      display: block;
     }
   }
 
@@ -259,14 +233,16 @@
 
   &__rooms-wrap {
     display: flex;
-    margin-left: -10px;
-    margin-right: -10px;
+    justify-content: space-between;
   }
 
   &__rooms-count {
-    width: 25%;
     height: 45px;
     padding: 0 10px;
+
+    @media (max-width: $screen-sm) {
+      padding: 0 5px 0 0;
+    }
   }
 
   &__rooms-count input[type='checkbox'] {
@@ -277,6 +253,7 @@
   &__rooms-count label {
     display: block;
     font-size: 28px;
+    padding: 0 28px;
     height: 100%;
     text-align: center;
     line-height: 45px;
@@ -284,6 +261,10 @@
 
     &:hover {
       cursor: pointer;
+    }
+
+    @media (max-width: $screen-sm) {
+      padding: 0 25px;
     }
 
     &__ready label {
@@ -294,8 +275,7 @@
   }
 
   &__rooms-count input[type='checkbox']:checked + label {
-    background-color: $text-color-white;
-    color: $second-color;
+    background-color: rgba(255, 255, 255, 0.3);
   }
 
   &__build-apartments-btn {
@@ -316,6 +296,7 @@
 
   &__results {
     display: flex;
+    flex-wrap: wrap;
 
     @media (min-width: $screen-lg) {
       display: flex;
@@ -328,39 +309,47 @@
     font-size: 17px;
     padding: 0 20px;
     order: 1;
-    width: 50%;
     margin-bottom: 0;
     text-align: center;
 
     @media (min-width: $screen-lg) {
-      width: 30%;
       font-size: 22px;
     }
   }
 
   &__results-btn {
-    width: 50%;
+    width: 296px;
     min-height: 45px;
     font-size: 16px;
     border: none;
     outline: none;
     cursor: pointer;
     transition: all 0.3s;
+    color: #039577;
 
-    @media (min-width: $screen-lg) {
-      width: 20%;
-    }
-
-    &:hover {
-      background-color: #ee7231;
+    @media (max-width: $screen-sm) {
+     margin-bottom: 10px;
+      width: 100%;
     }
   }
 
-  &__ready {
+  &__ready input[type='checkbox']{
+    display: none;
+  }
 
+  &__ready input[type='checkbox']:checked + label{
+   background-color: rgba(255, 255, 255, 0.3);
+  }
+
+  &__ready {
     @media (min-width: $screen-lg) {
       width: 100%;
       padding-right: 0;
+    }
+
+    @media (max-width: $screen-sm) {
+      width: 100%;
+      padding: 0;
     }
   }
 
@@ -371,10 +360,36 @@
     @media (min-width: $screen-lg) {
       width: 100%;
     }
+
+    @media (max-width: $screen-sm) {
+      width: 100%;
+      padding: 0;
+    }
   }
+}
+
+.back-top{
+  display: none;
+  width: 100px;
+  position: fixed;
+  right: 10vw;
+  top: 50%;
+  cursor: pointer;
+}
+
+.product-card__sale{
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0 5px;
+  background-color: #EE7231;
+  text-transform: uppercase;
+  color: #fff;
 }
 
 .select2-results__option {
   background: $second-color;
   color: $text-color-white;
 }
+
+// OBJ_FILTER_END

@@ -29,6 +29,23 @@ $(document).ready(function() {
     }
   });
 
+  $(function () {
+    $(window).scroll(function () {
+      if ($(this).scrollTop() > 300) {
+        $('.back-top').fadeIn();
+      } else {
+        $('.back-top').fadeOut();
+      }
+    });
+
+    $('.back-top').click(function () {
+      $('body,html').animate({
+        scrollTop: 0
+      }, 300);
+      return false;
+    });
+  });
+
   $('.page-footer__nav-link').click(function() {
     var width = $(window).width();
 
@@ -149,82 +166,6 @@ $(document).ready(function() {
     adaptiveHeight: true,
   });
 
-  // if (document.querySelector('.obj-filter__complex-select')) {
-  //   $('.obj-filter__complex-select').select2({
-  //     minimumResultsForSearch: Infinity,
-  //     placeholder: 'Все',
-  //     width: '270px',
-  //     closeOnSelect: false,
-  //     data: [
-  //       // {
-  //       //   obj: 'centr',
-  //       //   text: 'МКР Центральный',
-  //       //   id: 'c',
-  //       // },
-  //       {
-  //         obj: 'chd',
-  //         text: 'ЖК Верхний',
-  //         id: 'cd',
-  //       },
-  //       // {
-  //       //   obj: 'saray',
-  //       //   text: 'ЖК Павловский',
-  //       //   id: 'p',
-  //       // },
-  //       {
-  //         obj: 'premier',
-  //         text: 'ЖК Премьер',
-  //         id: 'pr',
-  //       },
-  //     ],
-  //   });
-
-    // $('.obj-filter__deadline-select').select2({
-    //   minimumResultsForSearch: Infinity,
-    //   placeholder: 'Все',
-    //   width: '100%',
-    //   closeOnSelect: false,
-    //   data: [
-    //     {
-    //       text: '2019 год',
-    //       id: 2019,
-    //     },
-    //     {
-    //       text: '2020 год',
-    //       id: 2020,
-    //     },
-    //     {
-    //       text: '2021 год',
-    //       id: 2021,
-    //     },
-    //     {
-    //       text: '2022 год',
-    //       id: 2022,
-    //     },
-    //   ],
-    // });
-
-    // $('.obj-filter__deadline-select').on(
-    //   'select2:opening select2:closing',
-    //   function(event) {
-    //     var $searchfield = $(this)
-    //       .parent()
-    //       .find('.select2-search__field');
-    //     $searchfield.prop('disabled', true);
-    //   }
-    // );
-
-    // $('.obj-filter__complex-select').on(
-    //   'select2:opening select2:closing',
-    //   function(event) {
-    //     var $searchfield = $(this)
-    //       .parent()
-    //       .find('.select2-search__field');
-    //     $searchfield.prop('disabled', true);
-    //   }
-    // );
-  // }
-
   const searchQuery = window.location.search;
   const complex = window.location.search.split('=')[1];
   if (complex) {
@@ -234,7 +175,7 @@ $(document).ready(function() {
     // } else if (complex === 'centralny') {
     //   $('.obj-filter__complex-select').val(['c']);
     //   $('.obj-filter__complex-select').trigger('change');
-    // } else 
+    // } else
     if (complex === 'verhniy') {
       $('.obj-filter__complex-select').val(['cd']);
       $('.obj-filter__complex-select').trigger('change');

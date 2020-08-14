@@ -1,10 +1,10 @@
 class Filter {
   constructor(complex, finishDates, rooms) {
-    this.complex = complex || [];
+    this.complex = complex;
     this.finishDates = finishDates || [];
-    this.rooms = rooms || [];
+    this.rooms = rooms || '';
     this.flatsList = [];
-    this.ready = false;
+    this.viewFlat = false;
     this.startFlatCounterRender = 0;
     this.currentPagination = 9;
     this.counterElement = document.querySelector('.obj-filter__results-text')
@@ -67,20 +67,6 @@ class Filter {
     console.log(option, value);
     const filteredArray = this.filterFlatsList();
     this.counterElement.innerHTML = filteredArray.length;
-
-    // if (option === 'ready') {
-    //   this.complex = [];
-    //   this.rooms = [];
-    //   document
-    //     .querySelector('.obj-filter__rooms-wrap')
-    //     .querySelectorAll('input[type="checkbox"]')
-    //     .forEach(function(sel) {
-    //       sel.checked = false;
-    //     });
-    // } else {
-    //   this.ready = false;
-    //   document.querySelector('.obj-filter__build-apartments-btn').style = '';
-    // }
   }
 
   renderFlatsList(noclear) {
@@ -89,7 +75,6 @@ class Filter {
       wrapper.innerHTML = '';
     }
     const listPreparedForRender = this.filterFlatsList();
-    console.log(listPreparedForRender)
 
     for (let i = this.startFlatCounterRender; i < this.currentPagination; i++) {
       if (listPreparedForRender[i]) {
@@ -104,6 +89,7 @@ class Filter {
           listPreparedForRender[i].link_flats
         }" target="_blank" class="product-card__link">
         <div class="product-card__img product-card__img--frame">
+        ${listPreparedForRender[i].sale ? `<div class="product-card__sale">скидка ${listPreparedForRender[i].sale}%</div>` : ''}
           <img
             src="${listPreparedForRender[i].imgLink}"
             alt="Изображение"
@@ -121,26 +107,27 @@ class Filter {
               : this.defineFlatType(listPreparedForRender[i].roomsQuantity)
           }</span>
         </div>
-        <div class="product-card__object-status">
+        ${listPreparedForRender[i].complex === 'cd' ? `<div class="product-card__object-status">
           <span>Этаж ${listPreparedForRender[i].floors}</span>
         </div>
         <div class="product-card__object-status">
           <span>Секция ${listPreparedForRender[i].section}</span>
-        </div>
-        <div class="product-card__object-status">
-          <span>Смотреть планировку</span>
-        </div>
-        <div class="product-card__square">
-          <span>Площадь</span>
-        </div>
-        <div class="product-card__square-value">
-          <span>${listPreparedForRender[i].fullFlat} м<sup>2</sup></span>
+        </div>` : ''}
+        <div class="square-info-wrapper">
+          <div class="product-card__square">
+            <div>ПЛОЩАДЬ</div>
+            <div>${listPreparedForRender[i].fullFlat} м<sup>2</sup></div>
+          </div>
+          ${listPreparedForRender[i].view ? `<div class="product-card__square">
+            <div>ТИП</div>
+            <div>ВИДОВАЯ</div>
+          </div>` : ''}
         </div>
         <div class="product-card__footer">
           <span
             >${priceFormatted} &#8381;
-            <span class="product-card__arrow">стрелка</span>
           </span>
+          <span class="product-card__arrow">стрелка</span>
         </div>
       </a></div>`;
       }
@@ -201,55 +188,34 @@ class Filter {
         e.preventDefault();
         this.startFlatCounterRender = 0;
         this.currentPagination = 9;
+        document.querySelector('.object__list').style.justifyContent = 'flex-start';
 
         this.renderFlatsList();
       });
 
-    // readyFlatsButton.addEventListener('click', e => {
-    //   e.preventDefault();
-    //   $('.obj-filter__complex-select').val([]);
-    //   $('.obj-filter__complex-select').trigger('change');
-    //   $('.obj-filter__deadline-select').val([]);
-    //   $('.obj-filter__deadline-select').trigger('change');
-
-    //   this.setFilterOption('ready', true);
-    //   this.startFlatCounterRender = 0;
-    //   this.currentPagination = 9;
-    //   readyFlatsButton.style.backgroundColor = 'rgba(255, 138, 0, 0.25)';
-    //   readyFlatsButton.style.borderColor = '#fff';
-    //   readyFlatsButton.style.color = '#fff';
-    //   this.renderFlatsList();
-    // });
   }
 
   filterFlatsList() {
     const filteredArray = this.flatsList.filter(flat => {
-      const isStudioAndStudiosSelected =
-        this.rooms.includes('s') && flat.studio;
-      if (this.ready) {
-        if (Number(flat.delivery) > 2019) {
+      if (this.viewFlat) {
+        console.log(flat.view)
+        if (!flat.view) {
           return false;
         }
       }
 
-      if (this.rooms.length) {
-        if (!this.rooms.includes(flat.roomsQuantity) && !flat.studio) {
+      if (this.rooms) {
+        if (!(this.rooms === flat.roomsQuantity) && !flat.studio) {
           return false;
         }
 
-        if (flat.studio && this.rooms.length && !this.rooms.includes('s')) {
-          return false;
-        }
-      }
-
-      if (this.finishDates.length) {
-        if (!this.finishDates.includes(flat.delivery)) {
+        if (flat.studio && this.rooms !== 's') {
           return false;
         }
       }
 
-      if (this.complex.length) {
-        if (!this.complex.includes(flat.complex)) {
+      if (this.complex) {
+        if (this.complex !== flat.complex) {
           return false;
         }
       }
@@ -275,32 +241,14 @@ $(document).ready(function() {
 
     complexCheckboxes.forEach(function(comp) {
       comp.addEventListener('change', function(e) {
-        const newComplexSelection = [];
-        complexCheckboxes.forEach(function(check) {
-          if (check.checked) newComplexSelection.push(check.value);
+        const newComplexSelection = e.target.checked ? e.target.value : '';
+        complexCheckboxes.forEach(function(i) {
+          i.value === newComplexSelection ? i.checked = true : i.checked = false
         });
 
         filterEntity.setFilterOption('complex', newComplexSelection);
       });
     });
-
-    const deadlineCheckboxes = document.querySelectorAll('.js-deadline')
-
-    deadlineCheckboxes.forEach(function(d) {
-      d.addEventListener('change', function(e) {
-        const newDeadlineSelection = [];
-        deadlineCheckboxes.forEach(function(check) {
-          if (check.checked) newDeadlineSelection.push(check.value);
-        });
-
-        filterEntity.setFilterOption('finishDates', newDeadlineSelection);
-      });
-    });
-
-
-    // $('.obj-filter__deadline-select').on('change', function(e) {
-    //   filterEntity.setFilterOption('finishDates', $(e.target).select2('val'));
-    // });
 
     const roomsForm = document.querySelector('.obj-filter__rooms-wrap');
 
@@ -311,18 +259,18 @@ $(document).ready(function() {
     const readyCheckbox = document.querySelector('#ready');
 
     readyCheckbox.addEventListener('change', function(e) {
-      filterEntity.setFilterOption('ready', e.target.checked);
+      filterEntity.setFilterOption('viewFlat', e.target.checked);
     });
 
     roomsCheckboxes.forEach(function(sel) {
       sel.addEventListener('change', function(e) {
-        const newRoomsSelection = [];
-        roomsCheckboxes.forEach(function(check) {
-          if (check.checked) newRoomsSelection.push(check.value);
-        });
+        const newRoomsSelection = e.target.checked ? e.target.value : '';
+        roomsCheckboxes.forEach(function(i) {
+          i.value === newRoomsSelection ? i.checked = true : i.checked = false
+        })
 
         filterEntity.setFilterOption('rooms', newRoomsSelection);
-      });
-    });
+        });
+     });
   }
 });
