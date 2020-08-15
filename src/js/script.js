@@ -187,14 +187,14 @@ $(document).ready(function() {
 
   if (['verhniy', 'premier'].includes(complex)) {
     const complexCheckboxes = document.querySelectorAll('.js-complex')
-    const newComplexSelection = [];
+    let newComplexSelection;
     complexCheckboxes.forEach(function(comp) {
         if(complex==='verhniy' && comp.value==='cd'){
           comp.setAttribute('checked', true)
-          newComplexSelection.push('cd')
+          newComplexSelection = comp.value
         } else if(complex==='premier' && comp.value==='pr')
         comp.setAttribute('checked', true)
-        newComplexSelection.push('pr')
+        newComplexSelection = comp.value
         });
         filterEntity.setFilterOption('complex', newComplexSelection);
     filterEntity.renderFlatsList();
