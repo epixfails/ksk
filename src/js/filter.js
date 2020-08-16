@@ -6,7 +6,7 @@ class Filter {
     this.flatsList = [];
     this.viewFlat = false;
     this.startFlatCounterRender = 0;
-    this.currentPagination = 9;
+    this.currentPagination = 8;
     this.counterElement = document.querySelector('.obj-filter__results-text')
       ? document
           .querySelector('.obj-filter__results-text')
@@ -137,7 +137,7 @@ class Filter {
 
     if (listPreparedForRender.length - this.currentPagination > 0) {
       this.startFlatCounterRender = this.currentPagination;
-      this.currentPagination = this.currentPagination + 9;
+      this.currentPagination = this.currentPagination + 8;
 
       loadMoreButton.style.display = 'block';
     } else {
@@ -187,7 +187,7 @@ class Filter {
       .addEventListener('click', e => {
         e.preventDefault();
         this.startFlatCounterRender = 0;
-        this.currentPagination = 9;
+        this.currentPagination = 8;
         document.querySelector('.object__list').style.justifyContent = 'flex-start';
 
         this.renderFlatsList();

@@ -188,16 +188,18 @@ $(document).ready(function() {
   if (['verhniy', 'premier'].includes(complex)) {
     const complexCheckboxes = document.querySelectorAll('.js-complex')
     let newComplexSelection;
+    console.log('complex', complex)
     complexCheckboxes.forEach(function(comp) {
-        if(complex==='verhniy' && comp.value==='cd'){
+        if(complex === 'verhniy' && comp.value === 'cd'){
           comp.setAttribute('checked', true)
-          newComplexSelection = comp.value
-        } else if(complex==='premier' && comp.value==='pr')
-        comp.setAttribute('checked', true)
-        newComplexSelection = comp.value
+          newComplexSelection = 'cd'
+        } else if(complex === 'premier' && comp.value === 'pr') {
+          comp.setAttribute('checked', true)
+          newComplexSelection = 'pr'
+        }
         });
         filterEntity.setFilterOption('complex', newComplexSelection);
-    filterEntity.renderFlatsList();
+        filterEntity.renderFlatsList();
   }
 
   const linkShaumyana = document.getElementById('linkSh');
