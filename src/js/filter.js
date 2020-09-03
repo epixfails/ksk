@@ -1,7 +1,6 @@
 class Filter {
-  constructor(complex, finishDates, rooms) {
+  constructor(complex, rooms) {
     this.complex = complex;
-    this.finishDates = finishDates || [];
     this.rooms = rooms || '';
     this.flatsList = [];
     this.viewFlat = false;
@@ -175,11 +174,25 @@ class Filter {
     }
   }
 
-  addEventOnSubmit() {
-    // const readyFlatsButton = document.querySelector(
-    //   '.obj-filter__build-apartments-btn'
-    // );
+  addUrlParam(search, key, val){
+    var newParam = key + '=' + val,
+        params = '?' + newParam;
+  
+    // If the "search" string exists, then build params from it
+    if (search) {
+      // Try to replace an existance instance
+      params = search.replace(new RegExp('([?&])' + key + '[^&]*'), '$1' + newParam);
+  
+      // If nothing was replaced, then add the new param to the end
+      if (params === search) {
+        params += '&' + newParam;
+      }
+    }
+  
+    return params;
+  };
 
+  addEventOnSubmit() {
     document
       .querySelector('.obj-filter__results-btn')
       .addEventListener('click', e => {
@@ -187,6 +200,32 @@ class Filter {
         this.startFlatCounterRender = 0;
         this.currentPagination = 8;
         document.querySelector('.object__list').style.justifyContent = 'flex-start';
+
+        console.log('click', this.complex)
+
+        const urlParams = new URLSearchParams(window.location.search);
+        if(window.location.search){
+          urlParams.delete('complex')
+          urlParams.delete('rooms')
+          urlParams.delete('view')
+        }
+
+
+
+        if(this.complex){
+          const complexName = this.complex === 'pr' ? 'premier' : 'verhniy'
+          urlParams.set('complex', complexName)
+        }
+
+        if(this.rooms){
+          urlParams.set('rooms', this.rooms)
+        }
+
+        if(this.viewFlat){
+          urlParams.set('view', '1')
+        }
+
+        window.location.search = urlParams;
 
         this.renderFlatsList();
       });

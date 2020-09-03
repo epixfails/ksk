@@ -214,7 +214,10 @@ $(document).ready(function() {
           newRoomsSelection = '2'
         } else if(rooms === '3' && r.value === '3'){
           r.setAttribute('checked', true)
-          newRoomsSelection = '2'
+          newRoomsSelection = '3'
+        } else if(rooms === 's' && r.value === 's'){
+          r.setAttribute('checked', true)
+          newRoomsSelection = 's'
         }
         });
         filterEntity.setFilterOption('rooms', newRoomsSelection);
