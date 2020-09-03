@@ -107,11 +107,9 @@ class Filter {
               : this.defineFlatType(listPreparedForRender[i].roomsQuantity)
           }</span>
         </div>
-        ${listPreparedForRender[i].complex === 'cd' ? `<div class="product-card__object-status">
-          <span>Этаж ${listPreparedForRender[i].floors}</span>
-        </div>
-        <div class="product-card__object-status">
-          <span>Секция ${listPreparedForRender[i].section}</span>
+        ${listPreparedForRender[i].complex === 'cd' ? `<div class="product-card__object-status" style="display: flex; justify-content:space-between;">
+          <div><span style="color: #7b7878">Секция </span>${listPreparedForRender[i].section}</div>
+          <div><span style="color: #7b7878">Артикул </span>${listPreparedForRender[i].id_flat}</div>
         </div>` : ''}
         <div class="square-info-wrapper">
           <div class="product-card__square">
