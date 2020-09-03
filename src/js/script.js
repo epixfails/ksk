@@ -166,41 +166,71 @@ $(document).ready(function() {
     adaptiveHeight: true,
   });
 
-  const searchQuery = window.location.search;
-  const complex = window.location.search.split('=')[1];
-  if (complex) {
-    // if (complex === 'pavlovsky') {
-    //   $('.obj-filter__complex-select').val(['p']);
-    //   $('.obj-filter__complex-select').trigger('change');
-    // } else if (complex === 'centralny') {
-    //   $('.obj-filter__complex-select').val(['c']);
-    //   $('.obj-filter__complex-select').trigger('change');
-    // } else
-    if (complex === 'verhniy') {
-      $('.obj-filter__complex-select').val(['cd']);
-      $('.obj-filter__complex-select').trigger('change');
-    } else if (complex === 'premier') {
-      $('.obj-filter__complex-select').val(['pr']);
-      $('.obj-filter__complex-select').trigger('change');
+  function parseQuery(queryString) {
+    var query = {};
+    var pairs = (queryString[0] === '?' ? queryString.substr(1) : queryString).split('&');
+    for (var i = 0; i < pairs.length; i++) {
+        var pair = pairs[i].split('=');
+        query[decodeURIComponent(pair[0])] = decodeURIComponent(pair[1] || '');
     }
+    return query;
   }
 
-  if (['verhniy', 'premier'].includes(complex)) {
-    const complexCheckboxes = document.querySelectorAll('.js-complex')
-    let newComplexSelection;
-    console.log('complex', complex)
-    complexCheckboxes.forEach(function(comp) {
-        if(complex === 'verhniy' && comp.value === 'cd'){
-          comp.setAttribute('checked', true)
-          newComplexSelection = 'cd'
-        } else if(complex === 'premier' && comp.value === 'pr') {
-          comp.setAttribute('checked', true)
-          newComplexSelection = 'pr'
+  const searchQuery = parseQuery(window.location.search)
+
+  if(Object.keys(searchQuery).length > 0){
+    const complex = searchQuery.complex;
+    const rooms = searchQuery.rooms;
+    const view = searchQuery.view;
+
+    if (['verhniy', 'premier'].includes(complex)) {
+      const complexCheckboxes = document.querySelectorAll('.js-complex')
+      let newComplexSelection;
+      complexCheckboxes.forEach(function(comp) {
+          if(complex === 'verhniy' && comp.value === 'cd'){
+            comp.setAttribute('checked', true)
+            newComplexSelection = 'cd'
+          } else if(complex === 'premier' && comp.value === 'pr') {
+            comp.setAttribute('checked', true)
+            newComplexSelection = 'pr'
+          }
+          });
+          filterEntity.setFilterOption('complex', newComplexSelection);
+    }
+
+    if(rooms){
+      let newRoomsSelection;
+      const roomsForm = document.querySelector('.obj-filter__rooms-wrap');
+      const roomsCheckboxes = roomsForm.querySelectorAll(
+        'input[type="checkbox"]'
+      );
+
+      roomsCheckboxes.forEach(function(r) {
+        if(rooms === '1' && r.value === '1'){
+          r.setAttribute('checked', true)
+          newRoomsSelection = '1'
+        } else if(rooms === '2' && r.value === '2') {
+          r.setAttribute('checked', true)
+          newRoomsSelection = '2'
+        } else if(rooms === '3' && r.value === '3'){
+          r.setAttribute('checked', true)
+          newRoomsSelection = '2'
         }
         });
-        filterEntity.setFilterOption('complex', newComplexSelection);
-        filterEntity.renderFlatsList();
+        filterEntity.setFilterOption('rooms', newRoomsSelection);
+    }
+
+    if(view){
+      const readyCheckbox = document.querySelector('#ready');
+      readyCheckbox.setAttribute('checked', true) 
+      filterEntity.setFilterOption('viewFlat', true);
+    }
+
+    filterEntity.renderFlatsList();
+
   }
+
+  
 
   const linkShaumyana = document.getElementById('linkSh');
   const linkKoltushi = document.getElementById('linkKoltushi');
