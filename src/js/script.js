@@ -229,7 +229,7 @@ $(document).ready(function() {
       filterEntity.setFilterOption('viewFlat', true);
     }
 
-    if(complex || rooms || view){
+    if(complex || rooms || view || window.location.href.includes('?')){
       filterEntity.renderFlatsList();
     }
 
