@@ -178,7 +178,7 @@ $(document).ready(function() {
 
   const searchQuery = parseQuery(window.location.search)
 
-  if(Object.keys(searchQuery).length > 0){
+  if(Object.keys(searchQuery).length > 1){
     const complex = searchQuery.complex;
     const rooms = searchQuery.rooms;
     const view = searchQuery.view;

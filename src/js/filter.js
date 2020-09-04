@@ -226,8 +226,6 @@ class Filter {
         }
 
         window.location.search = urlParams;
-
-        this.renderFlatsList();
       });
 
   }
@@ -311,3 +309,14 @@ $(document).ready(function() {
      });
   }
 });
+
+
+
+
+$(document).ready(function() {
+  if (screen.width <=500) {
+    $('html, body').animate({
+          scrollTop: $("div.object__list").offset().top
+    }, 1000);
+  }
+  });
