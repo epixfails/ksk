@@ -178,7 +178,7 @@ $(document).ready(function() {
 
   const searchQuery = parseQuery(window.location.search)
 
-  if(Object.keys(searchQuery).length > 1){
+  if(Object.keys(searchQuery).length > 0){
     const complex = searchQuery.complex;
     const rooms = searchQuery.rooms;
     const view = searchQuery.view;
@@ -229,7 +229,9 @@ $(document).ready(function() {
       filterEntity.setFilterOption('viewFlat', true);
     }
 
-    filterEntity.renderFlatsList();
+    if(complex || rooms || view){
+      filterEntity.renderFlatsList();
+    }
 
   }
 
