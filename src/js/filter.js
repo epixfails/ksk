@@ -77,12 +77,7 @@ class Filter {
 
     for (let i = this.startFlatCounterRender; i < this.currentPagination; i++) {
       if (listPreparedForRender[i]) {
-        const priceFormatted =
-          listPreparedForRender[i].priceFlat.slice(0, 1) +
-          ' ' +
-          listPreparedForRender[i].priceFlat.slice(1, 4) +
-          ' ' +
-          listPreparedForRender[i].priceFlat.slice(4);
+        const priceFormatted = Number(listPreparedForRender[i].priceFlat).toLocaleString('ru')
 
         wrapper.innerHTML += `<div class="object-block__item product-card"><a href="${
           listPreparedForRender[i].link_flats
@@ -177,18 +172,18 @@ class Filter {
   addUrlParam(search, key, val){
     var newParam = key + '=' + val,
         params = '?' + newParam;
-  
+
     // If the "search" string exists, then build params from it
     if (search) {
       // Try to replace an existance instance
       params = search.replace(new RegExp('([?&])' + key + '[^&]*'), '$1' + newParam);
-  
+
       // If nothing was replaced, then add the new param to the end
       if (params === search) {
         params += '&' + newParam;
       }
     }
-  
+
     return params;
   };
 
